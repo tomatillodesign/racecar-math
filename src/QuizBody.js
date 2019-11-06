@@ -1,5 +1,4 @@
 import React from "react";
-import Quiz from "./Quiz.js";
 import QuizProblem from "./QuizProblem";
 import "./App.css";
 
@@ -20,15 +19,88 @@ function QuizBody(props) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  if (typeOfProblem === "addition" && difficulty === "medium") {
-    num1 = randomIntFromInterval(10, 100);
-    num2 = randomIntFromInterval(10, 100);
-    answer = num1 + num2;
-    problem = num1 + " + " + num2 + " = _____";
-    completedProblem = num1 + " + " + num2 + " = " + answer;
-  }
+// addition
+if (typeOfProblem === "addition") {
+     if(difficulty === "medium") {
+          num1 = randomIntFromInterval(10, 100);
+          num2 = randomIntFromInterval(10, 100);
+     } else if (difficulty === "easy") {
+          num1 = randomIntFromInterval(0, 10);
+          num2 = randomIntFromInterval(0, 10);
+     } else if (difficulty === "hard") {
+          num1 = randomIntFromInterval(50, 999);
+          num2 = randomIntFromInterval(50, 999);
+     }
+     answer = num1 + num2;
+     problem = num1 + " + " + num2 + " = ?";
+     completedProblem = num1 + " + " + num2 + " = " + answer;
+}
+// subtraction
+else if (typeOfProblem === "subtraction") {
 
-  console.log("answerList: " + answerList);
+     // loop to ensure a positive answer
+     do {
+
+          if(difficulty === "medium") {
+               num1 = randomIntFromInterval(10, 100);
+               num2 = randomIntFromInterval(10, 100);
+          } else if (difficulty === "easy") {
+               num1 = randomIntFromInterval(0, 10);
+               num2 = randomIntFromInterval(0, 10);
+          } else if (difficulty === "hard") {
+               num1 = randomIntFromInterval(50, 999);
+               num2 = randomIntFromInterval(50, 999);
+          }
+          answer = num1 - num2;
+          problem = num1 + " - " + num2 + " = ?";
+          completedProblem = num1 + " - " + num2 + " = " + answer;
+
+     } while ( answer <= 0 );
+
+}
+// multiplication
+else if (typeOfProblem === "multiplication") {
+
+     if(difficulty === "medium") {
+          num1 = randomIntFromInterval(5, 15);
+          num2 = randomIntFromInterval(5, 15);
+     } else if (difficulty === "easy") {
+          num1 = randomIntFromInterval(0, 8);
+          num2 = randomIntFromInterval(0, 8);
+     } else if (difficulty === "hard") {
+          num1 = randomIntFromInterval(5, 30);
+          num2 = randomIntFromInterval(5, 30);
+     }
+     answer = num1 * num2;
+     problem = num1 + " * " + num2 + " = ?";
+     completedProblem = num1 + " * " + num2 + " = " + answer;
+
+}
+// division
+else if (typeOfProblem === "division") {
+
+     // loop to ensure an integer answer
+     do {
+
+          if(difficulty === "medium") {
+               num1 = randomIntFromInterval(5, 150);
+               num2 = randomIntFromInterval(2, 15);
+          } else if (difficulty === "easy") {
+               num1 = randomIntFromInterval(0, 24);
+               num2 = randomIntFromInterval(1, 8);
+          } else if (difficulty === "hard") {
+               num1 = randomIntFromInterval(10, 500);
+               num2 = randomIntFromInterval(5, 250);
+          }
+          answer = num1 / num2;
+          problem = num1 + " / " + num2 + " = ?";
+          completedProblem = num1 + " / " + num2 + " = " + answer;
+
+     } while ( ((answer - Math.floor(answer)) !== 0) || (num1 === num2) );
+
+}
+
+  console.log("answerList: " + JSON.stringify(answerList));
 
   return (
     <main className="clb-quiz-body-area">

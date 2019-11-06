@@ -14,7 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function RacecarFooter() {
   return (
     <footer className="clb-footer">
-    <p className="version">Version 0.1 - Nov 1, 2019 4:40pm</p>
+    <p className="version">Version 0.2 - Nov 6, 2019</p>
       <p>
         Made by Chris with
         <span className="header-icons">
