@@ -3,31 +3,68 @@ import Quiz from "./Quiz.js";
 import QuizBody from "./QuizBody";
 import "./App.css";
 
-function QuizProblem(props) {
+class QuizProblem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
 
-     let problem = null;
-     let num1 = null;
-     let num2 = null;
-     let answer = null;
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-     const typeOfProblem = props.typeOfProblem;
-     const difficulty = props.difficulty;
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
 
-     if( typeOfProblem === "addition" && difficulty === "medium" ) {
+  handleSubmit(event) {
+    alert("QuizProblem handleSubmit: " + this.state.value);
+    this.props.answerSubmit(this.state.value);
+    event.preventDefault();
+  }
 
-          num1 = Math.floor(Math.random() * 100);
-          num2 = Math.floor(Math.random() * 100);
-          answer = num1+num2;
-          problem = num1 + " + " + num2 + " = " + answer;
-          
-     }
+  render() {
+    console.log("THIS, NUM1: " + this.props.num1);
 
-  return (
-    <div className="clb-quiz-problem-area">
-      <p>Quiz Question Here: {typeOfProblem} {difficulty}</p>
-      <p>{problem}</p>
-    </div>
-  );
+    return (
+      <div className="clb-quiz-problem-area">
+        <p>
+          Quiz Question Here: {this.props.typeOfProblem} {this.props.difficulty}
+        </p>
+        <p>{this.props.problem}</p>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Your Answer:
+            <input
+              type="number"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    );
+  }
 }
+
+// function QuizProblem(props) {
+//
+//
+//      return (
+//        <div className="clb-quiz-problem-area">
+//          <p>
+//            Quiz Question Here: {typeOfProblem} {difficulty}
+//          </p>
+//          <p>{problem}</p>
+//          <form id="quiz-problem">
+//            <label>Your Answer:</label>
+//            <input type="number" />
+//            <button onClick={props.answerSubmit}>Submit</button>
+//          </form>
+//        </div>
+//      );
+//
+//
+// }
 
 export default QuizProblem;
