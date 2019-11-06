@@ -13,6 +13,7 @@ function QuizBody(props) {
   let num1 = null;
   let num2 = null;
   let answer = null;
+  let completedProblem = null;
 
   function randomIntFromInterval(min, max) {
     // min and max included
@@ -23,7 +24,8 @@ function QuizBody(props) {
     num1 = randomIntFromInterval(10, 100);
     num2 = randomIntFromInterval(10, 100);
     answer = num1 + num2;
-    problem = num1 + " + " + num2 + " = " + answer;
+    problem = num1 + " + " + num2 + " = _____";
+    completedProblem = num1 + " + " + num2 + " = " + answer;
   }
 
   console.log("answerList: " + answerList);
@@ -38,10 +40,8 @@ function QuizBody(props) {
         num2={num2}
         answer={answer}
         problem={problem}
+        completedProblem={completedProblem}
       />
-      <div className="answerList-area">
-        Previous Answers: {JSON.stringify(answerList)}
-      </div>
     </main>
   );
 }

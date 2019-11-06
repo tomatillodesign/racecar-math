@@ -1,6 +1,7 @@
 import React from "react";
 import QuizBody from "./QuizBody.js";
 import QuizProblem from "./QuizProblem.js";
+import Summary from "./Summary.js";
 import "./App.css";
 
 class Quiz extends React.Component {
@@ -30,9 +31,9 @@ class Quiz extends React.Component {
     console.log("TEST startQuiz");
   }
 
-  answerSubmit(number) {
-    alert("Quiz answerSubmit: " + number);
-    this.setState({ answerList: [...this.state.answerList, number] }); //simple value
+  answerSubmit(answerObj) {
+    alert("Quiz answerSubmit: " + JSON.stringify(answerObj));
+    this.setState({ answerList: [...this.state.answerList, answerObj] }); //simple value
   }
 
   render() {
@@ -46,6 +47,7 @@ class Quiz extends React.Component {
             answerSubmit={this.answerSubmit}
             answerList={this.state.answerList}
           />
+          <Summary answerList={this.state.answerList} />
         </>
       );
     } else {
