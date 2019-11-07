@@ -4,7 +4,6 @@ import "./App.css";
 // get our fontawesome imports
 import {
   faCarSide,
-  faFlagCheckered
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -15,7 +14,6 @@ function RacecarHeader() {
         Racecar Math
         <span className="header-icons">
           <FontAwesomeIcon icon={faCarSide} />
-          <FontAwesomeIcon icon={faFlagCheckered} />
         </span>
       </h1>
     </header>

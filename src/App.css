@@ -125,14 +125,13 @@ button, input[type=submit] {
 }
 
 .clb-settings button, .clb-settings input[type=submit] {
-     background: #76B3FA;
      border: 0;
      border-radius: 5px;
-     padding: 14px 24px;
+     padding: 8px 14px;
      color: #fff;
      text-decoration: none;
-     font-size: 14px;
-     margin: 0 15px;
+     font-size: 13px;
+     margin: 8px;
      transition: all ease-in-out .2s;
      text-transform: none;
 }
@@ -146,11 +145,13 @@ button:hover, .clb-settings button:hover, input[type=submit]:hover {
      background: #021b79;
 }
 
-
+.clb-settings.revealed {
+     display: flex;
+     justify-content: space-between;
+}
 
 .single-setting-area.start-over {
      margin-top: 60px;
-
 }
 
 .single-setting-area.start-over button {

@@ -6,6 +6,11 @@ import Summary from "./Summary.js";
 import NameForm from "./NameForm";
 import "./App.css";
 
+import {
+  faFlagCheckered
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class Quiz extends React.Component {
   constructor(props) {
     super(props);
@@ -186,7 +191,7 @@ setDifficultyHard(event) {
     } else {
       return (
         <>
-          <button onClick={this.startQuiz} id="start-quiz">Start Quiz</button>
+          <button onClick={this.startQuiz} id="start-quiz">Start Your Engines <FontAwesomeIcon icon={faFlagCheckered} /></button>
         </>
       );
     }
