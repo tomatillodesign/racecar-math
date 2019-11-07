@@ -124,7 +124,7 @@ setDifficultyHard(event) {
   }
 
   answerSubmit(answerObj) {
-    alert("Quiz answerSubmit: " + JSON.stringify(answerObj));
+    // alert("Quiz answerSubmit: " + JSON.stringify(answerObj));
     this.setState({ answerList: [...this.state.answerList, answerObj] }); //simple value
     this.setState((prevState) => {
          return { totalNumQuestions: prevState.totalNumQuestions + 1 }
@@ -162,10 +162,11 @@ setDifficultyHard(event) {
                hideSummaryfromUser={this.hideSummaryfromUser}
                startOver={this.startOver}
           />
+
+          <h2 className="quiz-active-message">Complete the Question Below</h2>
           <div className="type-of-question">
            {this.state.difficulty} &middot; {this.state.typeOfProblem}
          </div>
-          <h2 className="quiz-active-message">Complete the Question Below</h2>
           <QuizBody
             typeOfProblem={this.state.typeOfProblem}
             difficulty={this.state.difficulty}
@@ -185,7 +186,7 @@ setDifficultyHard(event) {
     } else {
       return (
         <>
-          <button onClick={this.startQuiz}>Start Quiz</button>
+          <button onClick={this.startQuiz} id="start-quiz">Start Quiz</button>
         </>
       );
     }

@@ -9,8 +9,8 @@ function Settings(props) {
      if( props.viewSettings === true ) {
 
        return (
-         <div className="clb-settings">
-           <button onClick={props.toggleViewSettings}><FontAwesomeIcon icon={faCog} /></button>
+         <div className="clb-settings revealed">
+           <button onClick={props.toggleViewSettings}><FontAwesomeIcon icon={faCog} /> Hide Settings</button>
            <div className="single-setting-area">
            <h3>Type of Question</h3>
                 <button onClick={props.setTypeAddition}>Addition</button>
@@ -37,8 +37,8 @@ function Settings(props) {
 
  } else {
       return (
-      <div className="clb-settings">
-        <button onClick={props.toggleViewSettings}><FontAwesomeIcon icon={faCog} /></button>
+      <div className="clb-settings hidden">
+        <button onClick={props.toggleViewSettings}><FontAwesomeIcon icon={faCog} /> Show Settings</button>
         </div>);
      }
 

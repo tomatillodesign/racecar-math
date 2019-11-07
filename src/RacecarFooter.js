@@ -5,16 +5,13 @@ import "./App.css";
 import {
   faHeart,
   faCoffee,
-  faCar,
-  faCarSide,
-  faFlagCheckered
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function RacecarFooter() {
   return (
     <footer className="clb-footer">
-    <p className="version">Version 0.2 - Nov 6, 2019</p>
+    <p className="version">Version 0.3 - Nov 7, 2019</p>
       <p>
         Made by Chris with
         <span className="header-icons">

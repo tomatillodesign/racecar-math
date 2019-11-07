@@ -72,8 +72,8 @@ else if (typeOfProblem === "multiplication") {
           num2 = randomIntFromInterval(5, 30);
      }
      answer = num1 * num2;
-     problem = num1 + " * " + num2 + " = ?";
-     completedProblem = num1 + " * " + num2 + " = " + answer;
+     problem = num1 + " × " + num2 + " = ?";
+     completedProblem = num1 + " × " + num2 + " = " + answer;
 
 }
 // division
@@ -93,8 +93,8 @@ else if (typeOfProblem === "division") {
                num2 = randomIntFromInterval(5, 250);
           }
           answer = num1 / num2;
-          problem = num1 + " / " + num2 + " = ?";
-          completedProblem = num1 + " / " + num2 + " = " + answer;
+          problem = num1 + " ÷ " + num2 + " = ?";
+          completedProblem = num1 + " ÷ " + num2 + " = " + answer;
 
      } while ( ((answer - Math.floor(answer)) !== 0) || (num1 === num2) );
 

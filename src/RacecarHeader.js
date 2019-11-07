@@ -3,9 +3,6 @@ import "./App.css";
 
 // get our fontawesome imports
 import {
-  faHome,
-  faCoffee,
-  faCar,
   faCarSide,
   faFlagCheckered
 } from "@fortawesome/free-solid-svg-icons";

@@ -56,8 +56,8 @@ class QuizProblem extends React.Component {
 
     return (
       <div className="clb-quiz-problem-area">
-        <p>{this.props.problem}</p>
-        <form onSubmit={this.handleSubmit}>
+        <div className="math-problem-numbers">{this.props.problem}</div>
+        <form onSubmit={this.handleSubmit} id="math-answer-form">
           <label>
             Your Answer:
             <input
@@ -65,6 +65,7 @@ class QuizProblem extends React.Component {
               min="0"
               step="1"
               pattern="[0-9]"
+              autoFocus={true}
               value={this.state.value}
               onChange={this.handleChange}
             />

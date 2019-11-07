@@ -31,7 +31,7 @@ class NameForm extends React.Component {
        if( this.state.active ) {
          return (
               <>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} id="name-form">
                   <label>
                   What's Your Name?
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
