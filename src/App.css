@@ -45,8 +45,8 @@
   margin-right: 30px;
 }
 
-.single-setting-area {
-     margin-top: 20px;
+.single-setting-area h3 {
+     margin-top: 0;
 }
 
 .version {
@@ -143,6 +143,16 @@ button:hover, .clb-settings button:hover, input[type=submit]:hover {
 
 .clb-settings button {
      background: #021b79;
+     border: 2px solid #021b79;
+     font-weight: 700;
+}
+
+button.type-of-problem.active, button.difficulty.active, button.show-summary.active {
+     background: #76B3FA;
+}
+
+.clb-settings {
+     transition: all 1.5s ease-in-out;
 }
 
 .clb-settings.revealed {
@@ -151,11 +161,13 @@ button:hover, .clb-settings button:hover, input[type=submit]:hover {
 }
 
 .single-setting-area.start-over {
-     margin-top: 60px;
+     /* height: 60%; */
 }
 
 .single-setting-area.start-over button {
      background: red;
+     height: 80%;
+     margin-top: 10%;
 }
 
 .single-setting-area.start-over button:hover {
@@ -206,6 +218,8 @@ button#start-quiz {
     animation: AnimationName 6s ease infinite;
 }
 
+
+
 @-webkit-keyframes AnimationName {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
@@ -220,4 +234,13 @@ button#start-quiz {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
+}
+
+
+.single-answer-result {
+     margin-bottom: 16px;
+}
+
+.single-answer-user {
+     font-size: 13px;
 }

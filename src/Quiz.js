@@ -153,20 +153,23 @@ setDifficultyHard(event) {
       return (
         <>
           <NameForm />
-          <Settings
-               viewSettings={this.state.viewSettings}
-               toggleViewSettings={this.toggleViewSettings}
-               setTypeAddition={this.setTypeAddition}
-               setTypeSub={this.setTypeSub}
-               setTypeMultiplication={this.setTypeMultiplication}
-               setTypeDivision={this.setTypeDivision}
-               setDifficultyEasy={this.setDifficultyEasy}
-               setDifficultyMed={this.setDifficultyMed}
-               setDifficultyHard={this.setDifficultyHard}
-               showSummarytoUser={this.showSummarytoUser}
-               hideSummaryfromUser={this.hideSummaryfromUser}
-               startOver={this.startOver}
-          />
+               <Settings
+                    viewSettings={this.state.viewSettings}
+                    toggleViewSettings={this.toggleViewSettings}
+                    setTypeAddition={this.setTypeAddition}
+                    setTypeSub={this.setTypeSub}
+                    setTypeMultiplication={this.setTypeMultiplication}
+                    setTypeDivision={this.setTypeDivision}
+                    setDifficultyEasy={this.setDifficultyEasy}
+                    setDifficultyMed={this.setDifficultyMed}
+                    setDifficultyHard={this.setDifficultyHard}
+                    typeOfProblem={this.state.typeOfProblem}
+                    difficulty={this.state.difficulty}
+                    showSummary={this.state.showSummary}
+                    showSummarytoUser={this.showSummarytoUser}
+                    hideSummaryfromUser={this.hideSummaryfromUser}
+                    startOver={this.startOver}
+               />
 
           <h2 className="quiz-active-message">Complete the Question Below</h2>
           <div className="type-of-question">

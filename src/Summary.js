@@ -11,19 +11,25 @@ function Summary(props) {
      //Previous Answers: {JSON.stringify(props.answerList)}
 
      const items = props.answerList.map((item, key) =>
-          <div key={item.num1 + "-" + item.num2}>
-               {item.completedProblem} | Your Answer: {item.answerSubmit}
+          <div key={item.num1 + "-" + item.num2} className="single-answer-result">
+               <div className="correct-answer">{item.completedProblem}
+                    {item.isCorrect === true &&
+                       <span className="summary-correct">
+                         <FontAwesomeIcon icon={faCheckSquare} />
+                       </span>
+                     }
+                     {item.isCorrect === false &&
+                        <span className="summary-wrong">
+                          <FontAwesomeIcon icon={faTimesCircle} />
+                        </span>
+                      }
+                 </div>
+               <div className="single-answer-user">Your Answer: {item.answerSubmit}</div>
 
-               {item.isCorrect === true &&
-                  <span className="summary-correct">
-                    <FontAwesomeIcon icon={faCheckSquare} />
-                  </span>
-                }
-                {item.isCorrect === false &&
-                   <span className="summary-wrong">
-                     <FontAwesomeIcon icon={faTimesCircle} />
-                   </span>
-                 }
+
+
+
+
           </div>);
 
      if(props.showSummary) {

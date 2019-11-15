@@ -52,6 +52,11 @@ class QuizProblem extends React.Component {
     event.preventDefault();
   }
 
+  componentDidUpdate(){
+       console.log('componentDidUpdate');
+       this.refs.quizInput.focus();
+     }
+
   render() {
 
     return (
@@ -61,6 +66,7 @@ class QuizProblem extends React.Component {
           <label>
             Your Answer:
             <input
+               ref="quizInput"
               type="number"
               min="0"
               step="1"
@@ -68,6 +74,7 @@ class QuizProblem extends React.Component {
               autoFocus={true}
               value={this.state.value}
               onChange={this.handleChange}
+              required
             />
           </label>
           <input type="submit" value="Submit" />
