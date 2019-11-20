@@ -1,6 +1,7 @@
-.App {
+#root {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  transition: all ease-in-out .35s;
 }
 
 .App-logo {
@@ -8,6 +9,7 @@
 }
 
 .App-header {
+     transition: all ease-in-out 1.5s;
   background-color: #021b79;
   min-height: 20vh;
   display: flex;
@@ -23,6 +25,7 @@
 }
 
 .clb-footer {
+  transition: all ease-in-out 1.5s;
   background: #01114b;
   min-height: 10vh;
   display: flex;
@@ -112,6 +115,7 @@ h2.quiz-active-message {
 }
 
 button, input[type=submit] {
+     transition: all ease-in-out 1.5s;
      background: #76B3FA;
      border: 0;
      border-radius: 8px;
@@ -142,6 +146,7 @@ button:hover, .clb-settings button:hover, input[type=submit]:hover {
 }
 
 .clb-settings button {
+     transition: all ease-in-out .25s;
      background: #021b79;
      border: 2px solid #021b79;
      font-weight: 700;
@@ -243,4 +248,156 @@ button#start-quiz {
 
 .single-answer-user {
      font-size: 13px;
+}
+
+#choose-colors {
+     text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+/* ------ COLORS: PINK ---------------- */
+.App.pink .App-header {
+     transition: all ease-in-out 1.5s;
+     background-color: #b91d73;
+}
+
+.App.pink .clb-footer {
+  transition: all ease-in-out 1.5s;
+  background: #6e1145;
+}
+
+.App.pink button, .App.pink input[type=submit] {
+     transition: all ease-in-out 1.5s;
+     background: #b91d73;
+}
+
+.App.pink button:hover, .App.pink .clb-settings button:hover, .App.pink input[type=submit]:hover {
+     cursor: pointer;
+     background: #6e1145;
+     transition: all ease-in-out .25s;
+}
+
+.App.pink .clb-settings button {
+     transition: all ease-in-out 1.5s;
+     background: #b91d73;
+     border: 2px solid #b91d73;
+     font-weight: 700;
+}
+
+.App.pink .type-of-question {
+     color: #b91d73;
+}
+
+.App.pink #math-answer-form input[type=number]
+{
+	border-bottom: 2px dashed #b91d73;
+     transition: all ease-in-out 1.5s;
+}
+
+
+
+
+/* ------ COLORS: ORANGE ---------------- */
+.App.orange .App-header {
+     transition: all ease-in-out 1.5s;
+     background-color: #F7971E;
+}
+
+.App.orange .clb-footer {
+  transition: all ease-in-out 1.5s;
+  background: #de7f08;
+}
+
+.App.orange button, .App.orange input[type=submit] {
+     transition: all ease-in-out 1.5s;
+     background: #F7971E;
+}
+
+.App.orange button:hover, .App.orange .clb-settings button:hover, .App.orange input[type=submit]:hover {
+     cursor: pointer;
+     background: #de7f08;
+     transition: all ease-in-out .25s;
+}
+
+.App.orange .clb-settings button {
+     transition: all ease-in-out 1.5s;
+     background: #F7971E;
+     border: 2px solid #F7971E;
+     font-weight: 700;
+}
+
+.App.orange #math-answer-form input[type=number]
+{
+	border-bottom: 2px dashed #F7971E;
+     transition: all ease-in-out 1.5s;
+}
+
+.App.orange .clb-settings.revealed {
+  background: #fcddb5;
+  transition: all ease-in-out 1.5s;
+}
+
+.App.orange .single-setting-area.start-over button {
+     background: red;
+}
+
+.App.orange .type-of-question {
+     color: #F7971E;
+}
+
+
+/* ------ COLORS: GREEN ---------------- */
+.App.green .App-header {
+     transition: all ease-in-out 1.5s;
+     background-color: #3CA55C;
+}
+
+.App.green .clb-footer {
+  transition: all ease-in-out 1.5s;
+  background: #225d34;
+}
+
+.App.green button, .App.green input[type=submit] {
+     transition: all ease-in-out 1.5s;
+     background: #3CA55C;
+}
+
+.App.green button:hover, .App.green .clb-settings button:hover, .App.green input[type=submit]:hover {
+     cursor: pointer;
+     background: #225d34;
+     transition: all ease-in-out .25s;
+}
+
+.App.green #math-answer-form input[type=number]
+{
+	border-bottom: 2px dashed #3CA55C;
+     transition: all ease-in-out 1.5s;
+}
+
+.App.green .clb-settings button {
+     transition: all ease-in-out 1.5s;
+     background: #3CA55C;
+     border: 2px solid #3CA55C;
+     font-weight: 700;
+}
+
+.App.green .single-setting-area.start-over button {
+     background: red;
+}
+
+.App.green .clb-settings.revealed {
+  background: #fcddb5;
+  transition: all ease-in-out 1.5s;
+}
+
+.App.green .type-of-question {
+     color: #3CA55C;
 }

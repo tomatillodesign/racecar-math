@@ -12,7 +12,7 @@ function RacecarFooter() {
   return (
     <footer className="clb-footer">
 
-    <p className="version">Version 0.4 - Nov 15, 2019</p>
+    <p className="version">Version 0.5 - Nov 19, 2019</p>
       <p>
         Made by Chris with
         <span className="header-icons">
