@@ -8,89 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Settings(props) {
 
-
-
-  // Color Scheme Buttons ------------------- //
-  let colorSchemeButtonPink = (
-    <button onClick={props.changeColors} className="color-scheme pink">
-      Pink
-    </button>
-  );
-  // END Color Scheme Buttons ------------------- //
-
-  // Problem Type Buttons ------------------- //
-  let typeOfProblem = props.typeOfProblem;
-  let additionButton = (
-    <button
-      onClick={props.setTypeAddition}
-      className="type-of-problem addition"
-    >
-      Addition
-    </button>
-  );
-  let subButton = (
-    <button onClick={props.setTypeSub} className="type-of-problem subtraction">
-      Subtraction
-    </button>
-  );
-  let multiplicationButton = (
-    <button
-      onClick={props.setTypeMultiplication}
-      className="type-of-problem multiplication"
-    >
-      Multiplication
-    </button>
-  );
-  let divisionButton = (
-    <button
-      onClick={props.setTypeDivision}
-      className="type-of-problem division"
-    >
-      Divison
-    </button>
-  );
-
-  if (typeOfProblem === "addition") {
-    additionButton = (
-      <button
-        onClick={props.setTypeAddition}
-        className="type-of-problem addition active"
-      >
-        Addition
-      </button>
-    );
-  }
-  if (typeOfProblem === "subtraction") {
-    subButton = (
-      <button
-        onClick={props.setTypeSub}
-        className="type-of-problem subtraction active"
-      >
-        Subtraction
-      </button>
-    );
-  }
-  if (typeOfProblem === "multiplication") {
-    multiplicationButton = (
-      <button
-        onClick={props.setTypeMultiplication}
-        className="type-of-problem multiplication active"
-      >
-        Multiplication
-      </button>
-    );
-  }
-  if (typeOfProblem === "division") {
-    divisionButton = (
-      <button
-        onClick={props.setTypeDivision}
-        className="type-of-problem division active"
-      >
-        Division
-      </button>
-    );
-  }
-
   // Difficulty Buttons ------------------- //
   let difficulty = props.difficulty;
   let easyButton = (
@@ -177,6 +94,7 @@ function Settings(props) {
 
   if (props.viewSettings === true) {
 
+       // Color Scheme -- SELECT
        const colorSchemeOptions = [
             { value: 'blue', label: 'Blue' },
             { value: 'pink', label: 'Pink' },
@@ -188,18 +106,29 @@ function Settings(props) {
        if( props.currentColorScheme === 'orange' ) { defaultValue = colorSchemeOptions[2]; }
        if( props.currentColorScheme === 'green' ) { defaultValue = colorSchemeOptions[3]; }
 
+
+       // Type of Question -- SELECT
+       const questionTypeOptions = [
+            { value: 'addition', label: '+ Addition' },
+            { value: 'subtraction', label: '– Subtraction' },
+            { value: 'multiplication', label: '× Multiplication' },
+            { value: 'division', label: '÷ Divison' }
+       ];
+
+       var defaultQuestionType = questionTypeOptions[0];
+       if( props.typeOfProblem === 'subtraction' ) { defaultQuestionType = questionTypeOptions[1]; }
+       if( props.typeOfProblem === 'multiplication' ) { defaultQuestionType = questionTypeOptions[2]; }
+       if( props.typeOfProblem === 'division' ) { defaultQuestionType = questionTypeOptions[3]; }
+
     return (
       <div className="clb-settings revealed">
         <div className="single-setting-area">
           <h3>Choose Colors</h3>
-          <Select options={colorSchemeOptions} defaultValue={defaultValue} onChange={props.changeColors} id="choose-colors"/>
+          <Select options={colorSchemeOptions} defaultValue={defaultValue} onChange={props.changeColors} id="choose-colors-select"/>
         </div>
         <div className="single-setting-area">
           <h3>Type of Question</h3>
-          {additionButton}
-          {subButton}
-          {multiplicationButton}
-          {divisionButton}
+          <Select options={questionTypeOptions} defaultValue={defaultQuestionType} onChange={props.setQuestionType} id="question-type-select"/>
         </div>
         <div className="single-setting-area">
           <h3>Question Difficulty</h3>

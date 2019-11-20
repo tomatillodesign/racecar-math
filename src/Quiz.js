@@ -4,7 +4,7 @@ import Score from "./Score.js";
 import Settings from "./Settings.js";
 import Summary from "./Summary.js";
 import NameForm from "./NameForm.js";
-import App from "./App.js";
+//import App from "./App.js";
 import "./App.css";
 
 import { faFlagCheckered } from "@fortawesome/free-solid-svg-icons";
@@ -27,17 +27,15 @@ class Quiz extends React.Component {
 
     this.startQuiz = this.startQuiz.bind(this);
     this.startOver = this.startOver.bind(this);
-    this.answerSubmit = this.answerSubmit.bind(this);
-    this.showSummarytoUser = this.showSummarytoUser.bind(this);
-    this.hideSummaryfromUser = this.hideSummaryfromUser.bind(this);
+    this.setQuestionType = this.setQuestionType.bind(this);
     this.setDifficultyEasy = this.setDifficultyEasy.bind(this);
     this.setDifficultyMed = this.setDifficultyMed.bind(this);
     this.setDifficultyHard = this.setDifficultyHard.bind(this);
-    this.setTypeAddition = this.setTypeAddition.bind(this);
-    this.setTypeSub = this.setTypeSub.bind(this);
-    this.setTypeMultiplication = this.setTypeMultiplication.bind(this);
-    this.setTypeDivision = this.setTypeDivision.bind(this);
+    this.answerSubmit = this.answerSubmit.bind(this);
+    this.showSummarytoUser = this.showSummarytoUser.bind(this);
+    this.hideSummaryfromUser = this.hideSummaryfromUser.bind(this);
     this.toggleViewSettings = this.toggleViewSettings.bind(this);
+
   }
 
   startQuiz(event) {
@@ -74,28 +72,10 @@ class Quiz extends React.Component {
     console.log("startOver");
   }
 
-  setTypeAddition(event) {
-    event.preventDefault();
-    this.setState({ typeOfProblem: "addition" });
-    console.log("setTypeAddition");
-  }
-
-  setTypeSub(event) {
-    event.preventDefault();
-    this.setState({ typeOfProblem: "subtraction" });
-    console.log("setTypeSub");
-  }
-
-  setTypeMultiplication(event) {
-    event.preventDefault();
-    this.setState({ typeOfProblem: "multiplication" });
-    console.log("setTypeMultiplication");
-  }
-
-  setTypeDivision(event) {
-    event.preventDefault();
-    this.setState({ typeOfProblem: "division" });
-    console.log("setTypeDivision");
+  setQuestionType(event) {
+    this.setState({ typeOfProblem: event.value });
+    console.log(event);
+    console.log("setQuestionType");
   }
 
   setDifficultyEasy(event) {
@@ -154,10 +134,7 @@ class Quiz extends React.Component {
           <Settings
             viewSettings={this.state.viewSettings}
             toggleViewSettings={this.toggleViewSettings}
-            setTypeAddition={this.setTypeAddition}
-            setTypeSub={this.setTypeSub}
-            setTypeMultiplication={this.setTypeMultiplication}
-            setTypeDivision={this.setTypeDivision}
+            setQuestionType={this.setQuestionType}
             setDifficultyEasy={this.setDifficultyEasy}
             setDifficultyMed={this.setDifficultyMed}
             setDifficultyHard={this.setDifficultyHard}

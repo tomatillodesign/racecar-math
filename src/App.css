@@ -9,7 +9,7 @@
 }
 
 .App-header {
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
   background-color: #021b79;
   min-height: 20vh;
   display: flex;
@@ -25,7 +25,7 @@
 }
 
 .clb-footer {
-  transition: all ease-in-out 1.5s;
+  transition: all ease-in-out 2.0s;
   background: #01114b;
   min-height: 10vh;
   display: flex;
@@ -115,7 +115,7 @@ h2.quiz-active-message {
 }
 
 button, input[type=submit] {
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
      background: #76B3FA;
      border: 0;
      border-radius: 8px;
@@ -157,7 +157,7 @@ button.type-of-problem.active, button.difficulty.active, button.show-summary.act
 }
 
 .clb-settings {
-     transition: all 1.5s ease-in-out;
+     transition: all 2.0s ease-in-out;
 }
 
 .clb-settings.revealed {
@@ -250,7 +250,7 @@ button#start-quiz {
      font-size: 13px;
 }
 
-#choose-colors {
+#choose-colors-select, #question-type-select {
      text-align: left;
 }
 
@@ -265,17 +265,17 @@ button#start-quiz {
 
 /* ------ COLORS: PINK ---------------- */
 .App.pink .App-header {
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
      background-color: #b91d73;
 }
 
 .App.pink .clb-footer {
-  transition: all ease-in-out 1.5s;
+  transition: all ease-in-out 2.0s;
   background: #6e1145;
 }
 
 .App.pink button, .App.pink input[type=submit] {
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
      background: #b91d73;
 }
 
@@ -285,8 +285,13 @@ button#start-quiz {
      transition: all ease-in-out .25s;
 }
 
+.App.pink .clb-settings.revealed {
+  background: #f5bddc;
+  transition: all ease-in-out 2.0s;
+}
+
 .App.pink .clb-settings button {
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
      background: #b91d73;
      border: 2px solid #b91d73;
      font-weight: 700;
@@ -299,7 +304,7 @@ button#start-quiz {
 .App.pink #math-answer-form input[type=number]
 {
 	border-bottom: 2px dashed #b91d73;
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
 }
 
 
@@ -307,17 +312,17 @@ button#start-quiz {
 
 /* ------ COLORS: ORANGE ---------------- */
 .App.orange .App-header {
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
      background-color: #F7971E;
 }
 
 .App.orange .clb-footer {
-  transition: all ease-in-out 1.5s;
+  transition: all ease-in-out 2.0s;
   background: #de7f08;
 }
 
 .App.orange button, .App.orange input[type=submit] {
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
      background: #F7971E;
 }
 
@@ -328,7 +333,7 @@ button#start-quiz {
 }
 
 .App.orange .clb-settings button {
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
      background: #F7971E;
      border: 2px solid #F7971E;
      font-weight: 700;
@@ -337,12 +342,12 @@ button#start-quiz {
 .App.orange #math-answer-form input[type=number]
 {
 	border-bottom: 2px dashed #F7971E;
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
 }
 
 .App.orange .clb-settings.revealed {
   background: #fcddb5;
-  transition: all ease-in-out 1.5s;
+  transition: all ease-in-out 2.0s;
 }
 
 .App.orange .single-setting-area.start-over button {
@@ -356,17 +361,17 @@ button#start-quiz {
 
 /* ------ COLORS: GREEN ---------------- */
 .App.green .App-header {
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
      background-color: #3CA55C;
 }
 
 .App.green .clb-footer {
-  transition: all ease-in-out 1.5s;
+  transition: all ease-in-out 2.0s;
   background: #225d34;
 }
 
 .App.green button, .App.green input[type=submit] {
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
      background: #3CA55C;
 }
 
@@ -379,23 +384,23 @@ button#start-quiz {
 .App.green #math-answer-form input[type=number]
 {
 	border-bottom: 2px dashed #3CA55C;
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
 }
 
 .App.green .clb-settings button {
-     transition: all ease-in-out 1.5s;
+     transition: all ease-in-out 2.0s;
      background: #3CA55C;
      border: 2px solid #3CA55C;
      font-weight: 700;
 }
 
 .App.green .single-setting-area.start-over button {
-     background: red;
+     background: #76B3FA;
 }
 
 .App.green .clb-settings.revealed {
-  background: #fcddb5;
-  transition: all ease-in-out 1.5s;
+  background: #c7ebd2;
+  transition: all ease-in-out 2.0s;
 }
 
 .App.green .type-of-question {
