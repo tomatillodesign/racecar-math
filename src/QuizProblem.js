@@ -8,6 +8,15 @@ class QuizProblem extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.millisToMinutesAndSeconds = this.millisToMinutesAndSeconds.bind(this);
+
+  }
+
+
+  millisToMinutesAndSeconds(millis) {
+       var minutes = Math.floor(millis / 60000);
+       var seconds = ((millis % 60000) / 1000).toFixed(1);
+       return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
   }
 
   handleChange(event) {
@@ -33,6 +42,13 @@ class QuizProblem extends React.Component {
       isCorrect = false;
     }
 
+
+    const endTime = Date.now();
+    const startTime = this.props.startTime;
+    const elapsed = endTime - startTime;
+    const formattedElapsed = this.millisToMinutesAndSeconds(elapsed);
+    // console.log('ELAPSED: ' + formattedElapsed);
+
     const answer = {
       typeOfProblem,
       difficulty,
@@ -42,6 +58,7 @@ class QuizProblem extends React.Component {
       completedProblem,
       correctAnswer,
       answerSubmit,
+      formattedElapsed,
       isCorrect
     };
 
@@ -49,6 +66,10 @@ class QuizProblem extends React.Component {
     //this.props.answerSubmit(this.state.value);
     this.props.answerSubmit(answer);
     this.setState({ value: "" });
+
+    let end = Date.now();
+    console.log('End Time: ' + end);
+
     event.preventDefault();
   }
 
@@ -56,6 +77,11 @@ class QuizProblem extends React.Component {
        console.log('componentDidUpdate');
        this.refs.quizInput.focus();
      }
+
+componentDidMount() {
+     let start = Date.now();
+     console.log('Mounted / Start Time: ' + start);
+}
 
   render() {
 

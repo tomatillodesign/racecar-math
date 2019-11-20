@@ -25,6 +25,7 @@ function Summary(props) {
                       }
                  </div>
                <div className="single-answer-user">Your Answer: {item.answerSubmit}</div>
+               <div className="single-answer-user time-elapsed">Time Elapsed: {item.formattedElapsed}</div>
 
 
 

@@ -120,24 +120,34 @@ function Settings(props) {
        if( props.typeOfProblem === 'multiplication' ) { defaultQuestionType = questionTypeOptions[2]; }
        if( props.typeOfProblem === 'division' ) { defaultQuestionType = questionTypeOptions[3]; }
 
+
+       // Difficulty -- SELECT
+       const difficultyOptions = [
+            { value: 'easy', label: 'Easy' },
+            { value: 'medium', label: 'Medium' },
+            { value: 'hard', label: 'Hard' }
+       ];
+
+       var defaultDifficulty = difficultyOptions[0];
+       if( props.difficulty === 'medium' ) { defaultDifficulty = difficultyOptions[1]; }
+       if( props.difficulty === 'hard' ) { defaultDifficulty = difficultyOptions[2]; }
+
     return (
       <div className="clb-settings revealed">
-        <div className="single-setting-area">
-          <h3>Choose Colors</h3>
-          <Select options={colorSchemeOptions} defaultValue={defaultValue} onChange={props.changeColors} id="choose-colors-select"/>
+        <div className="single-setting-area colors">
+          <h3>Racecar Colors</h3>
+          <Select options={colorSchemeOptions} defaultValue={defaultValue} onChange={props.changeColors} id="choose-colors-select" />
+        </div>
+        <div className="single-setting-area question-types">
+          <h3>Type of Math</h3>
+          <Select options={questionTypeOptions} defaultValue={defaultQuestionType} onChange={props.setQuestionType} id="question-type-select" />
+        </div>
+        <div className="single-setting-area difficulty">
+          <h3>Difficulty</h3>
+          <Select options={difficultyOptions} defaultValue={defaultDifficulty} onChange={props.setQuestionDifficulty} id="difficulty-select" />
         </div>
         <div className="single-setting-area">
-          <h3>Type of Question</h3>
-          <Select options={questionTypeOptions} defaultValue={defaultQuestionType} onChange={props.setQuestionType} id="question-type-select"/>
-        </div>
-        <div className="single-setting-area">
-          <h3>Question Difficulty</h3>
-          {easyButton}
-          {medButton}
-          {hardButton}
-        </div>
-        <div className="single-setting-area">
-          <h3>Show Summary of Results?</h3>
+          <h3>Show Summary?</h3>
           {showSummaryYes}
           {showSummaryNo}
         </div>

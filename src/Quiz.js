@@ -19,6 +19,7 @@ class Quiz extends React.Component {
       typeOfProblem: "addition",
       isTimed: false,
       difficulty: "medium",
+      startTime: null,
       showSummary: false,
       numberCorrect: null,
       totalNumQuestions: null,
@@ -28,9 +29,7 @@ class Quiz extends React.Component {
     this.startQuiz = this.startQuiz.bind(this);
     this.startOver = this.startOver.bind(this);
     this.setQuestionType = this.setQuestionType.bind(this);
-    this.setDifficultyEasy = this.setDifficultyEasy.bind(this);
-    this.setDifficultyMed = this.setDifficultyMed.bind(this);
-    this.setDifficultyHard = this.setDifficultyHard.bind(this);
+    this.setQuestionDifficulty = this.setQuestionDifficulty.bind(this);
     this.answerSubmit = this.answerSubmit.bind(this);
     this.showSummarytoUser = this.showSummarytoUser.bind(this);
     this.hideSummaryfromUser = this.hideSummaryfromUser.bind(this);
@@ -38,9 +37,14 @@ class Quiz extends React.Component {
 
   }
 
+
+
   startQuiz(event) {
     event.preventDefault();
-    this.setState({ isActive: true });
+    this.setState({
+         isActive: true,
+         startTime: Date.now(),
+    });
     console.log("startQuiz");
   }
 
@@ -62,6 +66,7 @@ class Quiz extends React.Component {
       typeOfProblem: "addition",
       isTimed: false,
       difficulty: "medium",
+      startTime: null,
       backgroundColors: "blue",
       showSummary: false,
       numberCorrect: null,
@@ -73,42 +78,43 @@ class Quiz extends React.Component {
   }
 
   setQuestionType(event) {
-    this.setState({ typeOfProblem: event.value });
-    console.log(event);
+    this.setState({ typeOfProblem: event.value,
+         startTime: Date.now()
+     });
+    //console.log(event);
     console.log("setQuestionType");
   }
 
-  setDifficultyEasy(event) {
-    event.preventDefault();
-    this.setState({ difficulty: "easy" });
-    console.log("setDifficultyEasy");
-  }
-
-  setDifficultyMed(event) {
-    event.preventDefault();
-    this.setState({ difficulty: "medium" });
-    console.log("setDifficultyMed");
-  }
-
-  setDifficultyHard(event) {
-    event.preventDefault();
-    this.setState({ difficulty: "hard" });
-    console.log("setDifficultyHard");
+  setQuestionDifficulty(event) {
+    this.setState({
+         difficulty: event.value,
+         startTime: Date.now()
+     });
+    console.log("setQuestionDifficulty");
   }
 
   showSummarytoUser(event) {
     event.preventDefault();
-    this.setState({ showSummary: true });
+    this.setState({
+         showSummary: true,
+         startTime: Date.now()
+     });
     console.log("showSummarytoUser");
   }
 
   hideSummaryfromUser(event) {
     event.preventDefault();
-    this.setState({ showSummary: false });
+    this.setState({
+         showSummary: false,
+         startTime: Date.now()
+     });
     console.log("hideSummaryfromUser");
   }
 
   answerSubmit(answerObj) {
+
+       this.setState({ startTime: Date.now() });
+
     // alert("Quiz answerSubmit: " + JSON.stringify(answerObj));
     this.setState({ answerList: [...this.state.answerList, answerObj] }); //simple value
     this.setState(prevState => {
@@ -135,9 +141,7 @@ class Quiz extends React.Component {
             viewSettings={this.state.viewSettings}
             toggleViewSettings={this.toggleViewSettings}
             setQuestionType={this.setQuestionType}
-            setDifficultyEasy={this.setDifficultyEasy}
-            setDifficultyMed={this.setDifficultyMed}
-            setDifficultyHard={this.setDifficultyHard}
+            setQuestionDifficulty={this.setQuestionDifficulty}
             typeOfProblem={this.state.typeOfProblem}
             difficulty={this.state.difficulty}
             showSummary={this.state.showSummary}
@@ -156,6 +160,7 @@ class Quiz extends React.Component {
           <QuizBody
             typeOfProblem={this.state.typeOfProblem}
             difficulty={this.state.difficulty}
+            startTime={this.state.startTime}
             answerSubmit={this.answerSubmit}
             answerList={this.state.answerList}
           />

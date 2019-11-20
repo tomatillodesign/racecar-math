@@ -7,6 +7,9 @@ function QuizBody(props) {
   const difficulty = props.difficulty;
   const answerSubmit = props.answerSubmit;
   const answerList = props.answerList;
+  const startTime = props.startTime;
+
+  console.log("startime: " + startTime);
 
   let problem = null;
   let num1 = null;
@@ -107,6 +110,7 @@ else if (typeOfProblem === "division") {
       <QuizProblem
         typeOfProblem={typeOfProblem}
         difficulty={difficulty}
+        startTime={startTime}
         answerSubmit={answerSubmit}
         num1={num1}
         num2={num2}

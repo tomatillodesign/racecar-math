@@ -52,6 +52,14 @@
      margin-top: 0;
 }
 
+.single-setting-area.question-types {
+     min-width: 180px;
+}
+
+.single-setting-area.difficulty {
+     min-width: 140px;
+}
+
 .version {
      margin-top: 40px;
      font-size: 12px;
@@ -250,7 +258,7 @@ button#start-quiz {
      font-size: 13px;
 }
 
-#choose-colors-select, #question-type-select {
+#choose-colors-select, #question-type-select, #difficulty-select {
      text-align: left;
 }
 
