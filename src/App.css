@@ -199,8 +199,7 @@ button.type-of-problem.active, button.difficulty.active, button.show-summary.act
 
 .summary-area {
      background: #f5f5f5;
-     padding-top: 30px;
-     padding-bottom: 60px;
+     padding: 30px 30px 60px;
 }
 
 .current-score {
@@ -249,9 +248,46 @@ button#start-quiz {
     100%{background-position:0% 50%}
 }
 
+.summary {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+     grid-gap: 20px;
+     /* justify-items: stretch;
+     justify-self: center; */
+     /* align-self: center; */
+     /* align-items: center; */
+     justify-content: space-around;
+}
+
+.blue .single-answer {
+     display: inline-block;
+}
 
 .single-answer-result {
-     margin-bottom: 16px;
+     color: #333;
+     padding: 12px;
+     padding-bottom: 0;
+     background: #fff;
+}
+
+.single-answer .question-number {
+     border-top-left-radius: 12px;
+     border-top-right-radius: 12px;
+     color: #fff;
+     padding: 6px 0;
+}
+
+.blue .single-answer .question-number {
+     background: #021b79;
+}
+
+.single-answer-user.time-elapsed {
+     background: #fff;
+     font-size: 12px;
+     color: #999;
+     padding-bottom: 12px;
+     border-bottom-left-radius: 12px;
+     border-bottom-right-radius: 12px;
 }
 
 .single-answer-user {
@@ -413,4 +449,35 @@ button#start-quiz {
 
 .App.green .type-of-question {
      color: #3CA55C;
+}
+
+
+
+
+
+/* Media Queries
+---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1300px) {
+
+     .summary {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+     }
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+     .summary {
+          grid-template-columns: 1fr 1fr 1fr;
+     }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+     .summary {
+          grid-template-columns: 1fr 1fr;
+     }
+
 }

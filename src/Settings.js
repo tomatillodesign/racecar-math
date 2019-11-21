@@ -8,55 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Settings(props) {
 
-  // Difficulty Buttons ------------------- //
-  let difficulty = props.difficulty;
-  let easyButton = (
-    <button onClick={props.setDifficultyEasy} className="difficulty easy">
-      Easy
-    </button>
-  );
-  let medButton = (
-    <button onClick={props.setDifficultyMed} className="difficulty med">
-      Medium
-    </button>
-  );
-  let hardButton = (
-    <button onClick={props.setDifficultyHard} className="difficulty hard">
-      Hard
-    </button>
-  );
-
-  if (difficulty === "easy") {
-    easyButton = (
-      <button
-        onClick={props.setDifficultyEasy}
-        className="difficulty easy active"
-      >
-        Easy
-      </button>
-    );
-  }
-  if (difficulty === "medium") {
-    medButton = (
-      <button
-        onClick={props.setDifficultyMed}
-        className="difficulty med active"
-      >
-        Medium
-      </button>
-    );
-  }
-  if (difficulty === "hard") {
-    hardButton = (
-      <button
-        onClick={props.setDifficultyHard}
-        className="difficulty hard active"
-      >
-        Hard
-      </button>
-    );
-  }
-  // END Difficulty Buttons ------------------- //
+  
 
   // Summary Buttons ------------------- //
   let showSummary = props.showSummary;
