@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Settings(props) {
 
-  
 
   // Summary Buttons ------------------- //
   let showSummary = props.showSummary;
@@ -44,7 +43,7 @@ function Settings(props) {
     );
   }
 
-  if (props.viewSettings === true) {
+
 
        // Color Scheme -- SELECT
        const colorSchemeOptions = [
@@ -119,15 +118,7 @@ function Settings(props) {
         </button>
       </div>
     );
-  } else {
-    return (
-      <div className="clb-settings hidden">
-        <button onClick={props.toggleViewSettings}>
-          <FontAwesomeIcon icon={faCog} /> Show Settings
-        </button>
-      </div>
-    );
-  }
+  
 }
 
 export default Settings;

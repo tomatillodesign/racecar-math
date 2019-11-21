@@ -43,9 +43,11 @@
 .clb-settings.revealed {
   background: #09d3ac;
   padding: 30px;
-  border-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
   margin-left: 30px;
-  margin-right: 30px;
+  margin-right: 0;
+  margin-top: 30px;
 }
 
 .single-setting-area h3 {
@@ -169,8 +171,8 @@ button.type-of-problem.active, button.difficulty.active, button.show-summary.act
 }
 
 .clb-settings.revealed {
-     display: flex;
-     justify-content: space-between;
+     /* display: flex;
+     justify-content: space-between; */
 }
 
 .single-setting-area.start-over {
@@ -277,10 +279,6 @@ button#start-quiz {
      padding: 6px 0;
 }
 
-.blue .single-answer .question-number {
-     background: #021b79;
-}
-
 .single-answer-user.time-elapsed {
      background: #fff;
      font-size: 12px;
@@ -300,10 +298,19 @@ button#start-quiz {
 
 
 
+.off-canvas-menu p {
+     padding: 40px;
+     background: #fff;
+}
 
 
 
 
+/* ------ COLORS: BLUE ---------------- */
+.blue .single-answer .question-number {
+     transition: all ease-in-out 2.0s;
+     background: #021b79;
+}
 
 
 
@@ -311,6 +318,11 @@ button#start-quiz {
 .App.pink .App-header {
      transition: all ease-in-out 2.0s;
      background-color: #b91d73;
+}
+
+.pink .single-answer .question-number {
+     transition: all ease-in-out 2.0s;
+     background: #b91d73;
 }
 
 .App.pink .clb-footer {
@@ -370,6 +382,11 @@ button#start-quiz {
      background: #F7971E;
 }
 
+.orange .single-answer .question-number {
+     transition: all ease-in-out 2.0s;
+     background: #F7971E;
+}
+
 .App.orange button:hover, .App.orange .clb-settings button:hover, .App.orange input[type=submit]:hover {
      cursor: pointer;
      background: #de7f08;
@@ -415,6 +432,11 @@ button#start-quiz {
 }
 
 .App.green button, .App.green input[type=submit] {
+     transition: all ease-in-out 2.0s;
+     background: #3CA55C;
+}
+
+.green .single-answer .question-number {
      transition: all ease-in-out 2.0s;
      background: #3CA55C;
 }

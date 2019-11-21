@@ -2,8 +2,7 @@ import React from "react";
 import "./App.css";
 
 import { faCheckSquare,
-          faTimesCircle,
-          faClock
+          faTimesCircle
  } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

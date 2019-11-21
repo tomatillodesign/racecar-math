@@ -4,21 +4,22 @@ import Score from "./Score.js";
 import Settings from "./Settings.js";
 import Summary from "./Summary.js";
 import NameForm from "./NameForm.js";
-//import App from "./App.js";
 import "./App.css";
 
-import { faFlagCheckered } from "@fortawesome/free-solid-svg-icons";
+import { faFlagCheckered, faCog } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { OffCanvas, OffCanvasMenu } from "react-offcanvas";
 
 class Quiz extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isActive: false,
-      viewSettings: false,
+      isMenuOpened: false,
       typeOfProblem: "addition",
       isTimed: false,
-      difficulty: "medium",
+      difficulty: "easy",
       startTime: null,
       showSummary: false,
       numberCorrect: null,
@@ -33,7 +34,7 @@ class Quiz extends React.Component {
     this.answerSubmit = this.answerSubmit.bind(this);
     this.showSummarytoUser = this.showSummarytoUser.bind(this);
     this.hideSummaryfromUser = this.hideSummaryfromUser.bind(this);
-    this.toggleViewSettings = this.toggleViewSettings.bind(this);
+    this.offCanvasClick = this.offCanvasClick.bind(this);
 
   }
 
@@ -48,13 +49,6 @@ class Quiz extends React.Component {
     console.log("startQuiz");
   }
 
-  toggleViewSettings(event) {
-    event.preventDefault();
-    this.setState(prevState => ({
-      viewSettings: !prevState.viewSettings
-    }));
-    console.log("toggleViewSettings");
-  }
 
   startOver(event) {
     event.preventDefault();
@@ -128,6 +122,14 @@ class Quiz extends React.Component {
     }
   }
 
+
+  offCanvasClick() {
+    // toggles the menu opened state
+    this.setState({ isMenuOpened: !this.state.isMenuOpened });
+  }
+
+
+
   render() {
 
        console.log(this.props.currentColorScheme);
@@ -137,26 +139,46 @@ class Quiz extends React.Component {
       return (
         <>
           <NameForm />
-          <Settings
-            viewSettings={this.state.viewSettings}
-            toggleViewSettings={this.toggleViewSettings}
-            setQuestionType={this.setQuestionType}
-            setQuestionDifficulty={this.setQuestionDifficulty}
-            typeOfProblem={this.state.typeOfProblem}
-            difficulty={this.state.difficulty}
-            showSummary={this.state.showSummary}
-            showSummarytoUser={this.showSummarytoUser}
-            hideSummaryfromUser={this.hideSummaryfromUser}
-            startOver={this.startOver}
-            resetColors={this.props.resetColors}
-            currentColorScheme={currentColorScheme}
-            changeColors={this.props.changeColors}
-          />
 
           <h2 className="quiz-active-message">Complete the Question Below</h2>
           <div className="type-of-question">
             {this.state.difficulty} &middot; {this.state.typeOfProblem}
           </div>
+
+          <div className="clb-settings hidden">
+             <button onClick={this.offCanvasClick}>
+               <FontAwesomeIcon icon={faCog} /> Show Settings
+             </button>
+          </div>
+
+          <OffCanvas
+             width={400}
+             transitionDuration={1000}
+             effect={"overlay"}
+             isMenuOpened={this.state.isMenuOpened}
+             position={"right"}
+           >
+             <OffCanvasMenu className="off-canvas-menu">
+               <div className="settings-container">
+                  <Settings
+                    viewSettings={this.state.viewSettings}
+                    toggleViewSettings={this.offCanvasClick}
+                    setQuestionType={this.setQuestionType}
+                    setQuestionDifficulty={this.setQuestionDifficulty}
+                    typeOfProblem={this.state.typeOfProblem}
+                    difficulty={this.state.difficulty}
+                    showSummary={this.state.showSummary}
+                    showSummarytoUser={this.showSummarytoUser}
+                    hideSummaryfromUser={this.hideSummaryfromUser}
+                    startOver={this.startOver}
+                    resetColors={this.props.resetColors}
+                    currentColorScheme={currentColorScheme}
+                    changeColors={this.props.changeColors}
+                  />
+                  </div>
+             </OffCanvasMenu>
+      </OffCanvas>
+
           <QuizBody
             typeOfProblem={this.state.typeOfProblem}
             difficulty={this.state.difficulty}
