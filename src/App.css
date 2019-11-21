@@ -18,6 +18,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: 60px;
 }
 
 .App-link {
@@ -25,6 +26,7 @@
 }
 
 .clb-footer {
+     margin-top: 60px;
   transition: all ease-in-out 2.0s;
   background: #01114b;
   min-height: 10vh;
@@ -51,7 +53,8 @@
 }
 
 .single-setting-area h3 {
-     margin-top: 0;
+     margin-top: 24px;
+     margin-bottom: 4px;
 }
 
 .single-setting-area.question-types {
@@ -180,9 +183,14 @@ button.type-of-problem.active, button.difficulty.active, button.show-summary.act
 }
 
 .single-setting-area.start-over button {
-     background: red;
-     height: 80%;
-     margin-top: 10%;
+    background: red;
+    width: 100%;
+    margin-top: 24px;
+}
+
+#hide-settings {
+     width: 100%;
+    margin-top: 0;
 }
 
 .single-setting-area.start-over button:hover {
@@ -215,10 +223,10 @@ button.type-of-problem.active, button.difficulty.active, button.show-summary.act
 }
 
 #start-quiz {
-     margin: 30px;
+     margin-bottom: 30px;
 }
 
-button#start-quiz {
+button#start-quiz, button#start-sprints {
      padding: 30px 40px;
      font-size: 30px;
      background: linear-gradient(270deg,#01114b,#09d3ac);
@@ -230,6 +238,9 @@ button#start-quiz {
     -webkit-animation: AnimationName 6s ease infinite;
     -moz-animation: AnimationName 6s ease infinite;
     animation: AnimationName 6s ease infinite;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 

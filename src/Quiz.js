@@ -4,6 +4,7 @@ import Score from "./Score.js";
 import Settings from "./Settings.js";
 import Summary from "./Summary.js";
 import NameForm from "./NameForm.js";
+import SprintArea from "./SprintArea.js";
 import "./App.css";
 
 import { faFlagCheckered, faCog } from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +16,7 @@ class Quiz extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isSprint: false,
       isActive: false,
       isMenuOpened: false,
       typeOfProblem: "addition",
@@ -35,14 +37,24 @@ class Quiz extends React.Component {
     this.showSummarytoUser = this.showSummarytoUser.bind(this);
     this.hideSummaryfromUser = this.hideSummaryfromUser.bind(this);
     this.offCanvasClick = this.offCanvasClick.bind(this);
+    this.startSprint = this.startSprint.bind(this);
 
   }
 
 
 
+  startSprint(event) {
+       event.preventDefault();
+      this.setState({
+           isSprint: true
+      });
+      console.log("startSprint");
+ }
+
   startQuiz(event) {
     event.preventDefault();
     this.setState({
+         isSprint: false,
          isActive: true,
          startTime: Date.now(),
     });
@@ -55,11 +67,12 @@ class Quiz extends React.Component {
     this.props.resetColors(event);
 
     this.setState({
+         isSprint: false,
       isActive: false,
-      viewSettings: false,
+      isMenuOpened: false,
       typeOfProblem: "addition",
       isTimed: false,
-      difficulty: "medium",
+      difficulty: "easy",
       startTime: null,
       backgroundColors: "blue",
       showSummary: false,
@@ -191,16 +204,29 @@ class Quiz extends React.Component {
             totalNumQuestions={this.state.totalNumQuestions}
           />
           <Summary
-            answerList={this.state.answerList}
-            showSummary={this.state.showSummary}
+           answerList={this.state.answerList}
+           showSummary={this.state.showSummary}
           />
         </>
       );
-    } else {
+} else if (this.state.isSprint === true) {
+
+     return (
+       <>
+          <div className="clb-sprint-area">
+          <SprintArea />
+         </div>
+       </>
+     );
+
+} else {
       return (
         <>
           <button onClick={this.startQuiz} id="start-quiz">
-            Start Your Engines <FontAwesomeIcon icon={faFlagCheckered} />
+            Practice Laps (Open Practice) <FontAwesomeIcon icon={faFlagCheckered} />
+          </button>
+          <button onClick={this.startSprint} id="start-sprints">
+            Race (Math Sprints) <FontAwesomeIcon icon={faFlagCheckered} />
           </button>
         </>
       );
