@@ -7,7 +7,7 @@ import SprintEnding from "./SprintEnding.js";
 import Timer from "./Timer.js";
 import "./App.css";
 
-import { faFlagCheckered } from "@fortawesome/free-solid-svg-icons";
+import { faFlagCheckered, faCheckSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class SprintArea extends React.Component {
@@ -154,7 +154,7 @@ newSprint(event) {
 } else if (this.state.postSprintSummary === true) {
      return (
        <>
-         <h3>SPRINT COMPLETE</h3>
+         <h3 className="sprint-complete-message">You Completed Your Sprint <FontAwesomeIcon icon={faCheckSquare} /></h3>
          <Score
            numberCorrect={this.state.numberCorrect}
            totalNumQuestions={this.state.totalNumQuestions}
