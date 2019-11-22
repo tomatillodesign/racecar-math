@@ -2,7 +2,9 @@ import React from "react";
 import QuizBody from "./QuizBody.js";
 import NameForm from "./NameForm.js";
 import Score from "./Score.js";
+import SprintSettings from "./SprintSettings.js";
 import Summary from "./Summary.js";
+import SprintSummary from "./SprintSummary.js";
 import Timer from "./Timer.js";
 import "./App.css";
 
@@ -17,7 +19,7 @@ class SprintArea extends React.Component {
       typeOfProblem: "addition",
       timeStarted: null,
       timeRemaining: null,
-      lengthOfSprint: 60,
+      lengthOfSprint: 3,
       difficulty: "easy",
       showSummary: true,
       postSprintSummary: false,
@@ -31,7 +33,7 @@ class SprintArea extends React.Component {
     this.setQuestionDifficulty = this.setQuestionDifficulty.bind(this);
     this.answerSubmit = this.answerSubmit.bind(this);
     this.endSprint = this.endSprint.bind(this);
-    this.tick = this.tick.bind(this);
+
 
   }
 
@@ -41,6 +43,7 @@ class SprintArea extends React.Component {
            this.setState({
                 getStarted: true,
                 timeStarted: Date.now(),
+                startTime: Date.now(),
                 timeRemaining: this.state.lengthOfSprint
            });
       console.log("getStarted - " + this.state.timeRemaining);
@@ -88,16 +91,6 @@ class SprintArea extends React.Component {
   }
 
 
-  tick() {
-       this.setState(prevState => ({
-         timeRemaining: prevState.timeRemaining - 1
-       }));
-     }
-
-  componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
-
 
 
   render() {
@@ -110,7 +103,7 @@ class SprintArea extends React.Component {
 
       return (
         <div className="clb-sprint-active">
-        <Timer timeStarted={this.state.timeStarted} endSprint={this.endSprint}/>
+        <Timer timeStarted={this.state.timeStarted} endSprint={this.endSprint} lengthOfSprint={this.state.lengthOfSprint} />
           <h2 className="quiz-active-message sprint">SPRINT: Complete the Question Below</h2>
           <div className="type-of-question">
             {this.state.difficulty} &middot; {this.state.typeOfProblem}
@@ -136,12 +129,34 @@ class SprintArea extends React.Component {
      return (
        <>
          <h3>SPRINT COMPLETE</h3>
+         <Score
+           numberCorrect={this.state.numberCorrect}
+           totalNumQuestions={this.state.totalNumQuestions}
+         />
+         <SprintSummary
+               answerList={this.state.answerList}
+         />
        </>
      );
     } else {
       return (
         <>
           <NameForm />
+          <div className="settings-container-sprints">
+             <SprintSettings
+               viewSettings={this.state.viewSettings}
+               toggleViewSettings={this.offCanvasClick}
+               setQuestionType={this.setQuestionType}
+               setQuestionDifficulty={this.setQuestionDifficulty}
+               typeOfProblem={this.state.typeOfProblem}
+               difficulty={this.state.difficulty}
+               startOver={this.startOver}
+               resetColors={this.props.resetColors}
+               currentColorScheme={currentColorScheme}
+               changeColors={this.props.changeColors}
+               startOver={this.props.startOver}
+               />
+             </div>
           <button onClick={this.getStarted} id="clb-lets-go">
             Start Now <FontAwesomeIcon icon={faFlagCheckered} />
           </button>

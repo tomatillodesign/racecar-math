@@ -7,7 +7,7 @@ import NameForm from "./NameForm.js";
 import SprintArea from "./SprintArea.js";
 import "./App.css";
 
-import { faFlagCheckered, faCog } from "@fortawesome/free-solid-svg-icons";
+import { faFlagCheckered, faCog, faTools } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { OffCanvas, OffCanvasMenu } from "react-offcanvas";
@@ -46,7 +46,8 @@ class Quiz extends React.Component {
   startSprint(event) {
        event.preventDefault();
       this.setState({
-           isSprint: true
+           isSprint: true,
+           startTime: Date.now(),
       });
       console.log("startSprint");
  }
@@ -214,7 +215,15 @@ class Quiz extends React.Component {
      return (
        <>
           <div className="clb-sprint-area">
-          <SprintArea />
+          <SprintArea
+               resetColors={this.props.resetColors}
+               currentColorScheme={currentColorScheme}
+               changeColors={this.props.changeColors}
+               startOver={this.startOver}
+               numberCorrect={this.state.numberCorrect}
+               totalNumQuestions={this.state.totalNumQuestions}
+               startTime={this.state.startTime}
+          />
          </div>
        </>
      );
@@ -223,7 +232,7 @@ class Quiz extends React.Component {
       return (
         <>
           <button onClick={this.startQuiz} id="start-quiz">
-            Practice Laps (Open Practice) <FontAwesomeIcon icon={faFlagCheckered} />
+            Practice Laps (Open Practice) <FontAwesomeIcon icon={faTools} />
           </button>
           <button onClick={this.startSprint} id="start-sprints">
             Race (Math Sprints) <FontAwesomeIcon icon={faFlagCheckered} />

@@ -235,27 +235,37 @@ button#start-quiz, button#start-sprints {
     backface-visibility: hidden !important;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-animation: AnimationName 6s ease infinite;
-    -moz-animation: AnimationName 6s ease infinite;
-    animation: AnimationName 6s ease infinite;
+    -webkit-animation: buttonBackgroundFader 8s ease infinite;
+    -moz-animation: buttonBackgroundFader 8s ease infinite;
+    animation: buttonBackgroundFader 8s ease infinite;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+button#start-sprints {
+     background: linear-gradient(270deg,#09d3ac, #01114b);
+     background-size: 400% 400%;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-animation: buttonBackgroundFader 8s ease infinite;
+    -moz-animation: buttonBackgroundFader 8s ease infinite;
+    animation: buttonBackgroundFader 8s ease infinite;
+}
 
-
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes buttonBackgroundFader {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
-@-moz-keyframes AnimationName {
+@-moz-keyframes buttonBackgroundFader {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
-@keyframes AnimationName {
+@keyframes buttonBackgroundFader {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}

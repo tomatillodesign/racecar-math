@@ -7,7 +7,7 @@ import { faCheckSquare,
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-function Summary(props) {
+function SprintSummary(props) {
 
      //Previous Answers: {JSON.stringify(props.answerList)}
 
@@ -35,7 +35,6 @@ function Summary(props) {
                <div className="single-answer-user time-elapsed">Time {item.formattedElapsed}</div>
                </div>);
 
-     if(props.showSummary) {
 
             return (
               <div className="summary-area">
@@ -46,9 +45,6 @@ function Summary(props) {
               </div>
             );
 
-       } else {
-            return (<div className="summary-hidden"></div>);
-       }
 }
 
-export default Summary;
+export default SprintSummary;

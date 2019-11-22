@@ -58,6 +58,7 @@ class QuizProblem extends React.Component {
       completedProblem,
       correctAnswer,
       answerSubmit,
+      elapsed,
       formattedElapsed,
       isCorrect
     };
