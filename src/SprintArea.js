@@ -16,6 +16,7 @@ class SprintArea extends React.Component {
       getStarted: false,
       typeOfProblem: "addition",
       timeStarted: null,
+      timeRemaining: null,
       lengthOfSprint: 60,
       difficulty: "easy",
       showSummary: true,
@@ -30,6 +31,7 @@ class SprintArea extends React.Component {
     this.setQuestionDifficulty = this.setQuestionDifficulty.bind(this);
     this.answerSubmit = this.answerSubmit.bind(this);
     this.endSprint = this.endSprint.bind(this);
+    this.tick = this.tick.bind(this);
 
   }
 
@@ -39,8 +41,9 @@ class SprintArea extends React.Component {
            this.setState({
                 getStarted: true,
                 timeStarted: Date.now(),
+                timeRemaining: this.state.lengthOfSprint
            });
-      console.log("getStarted");
+      console.log("getStarted - " + this.state.timeRemaining);
  }
 
  endSprint(event) {
@@ -85,6 +88,16 @@ class SprintArea extends React.Component {
   }
 
 
+  tick() {
+       this.setState(prevState => ({
+         timeRemaining: prevState.timeRemaining - 1
+       }));
+     }
+
+  componentDidMount() {
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+
 
 
   render() {
@@ -93,6 +106,8 @@ class SprintArea extends React.Component {
        const currentColorScheme = this.props.currentColorScheme;
 
     if (this.state.getStarted === true) {
+         console.log("getStarted - " + this.state.timeRemaining);
+
       return (
         <div className="clb-sprint-active">
         <Timer timeStarted={this.state.timeStarted} endSprint={this.endSprint}/>
