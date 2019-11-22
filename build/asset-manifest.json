@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.86422b54.chunk.css",
-    "main.js": "/static/js/main.21cb4e1f.chunk.js",
-    "main.js.map": "/static/js/main.21cb4e1f.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.8ec8d035.js",
-    "runtime-main.js.map": "/static/js/runtime-main.8ec8d035.js.map",
-    "static/js/2.9835c002.chunk.js": "/static/js/2.9835c002.chunk.js",
-    "static/js/2.9835c002.chunk.js.map": "/static/js/2.9835c002.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.80f9937e8fdabd548ffd30b3da4d55ab.js": "/precache-manifest.80f9937e8fdabd548ffd30b3da4d55ab.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.86422b54.chunk.css.map": "/static/css/main.86422b54.chunk.css.map"
+    "main.css": "/racecar-math/static/css/main.86422b54.chunk.css",
+    "main.js": "/racecar-math/static/js/main.0e3fd84b.chunk.js",
+    "main.js.map": "/racecar-math/static/js/main.0e3fd84b.chunk.js.map",
+    "runtime-main.js": "/racecar-math/static/js/runtime-main.094acf63.js",
+    "runtime-main.js.map": "/racecar-math/static/js/runtime-main.094acf63.js.map",
+    "static/js/2.9835c002.chunk.js": "/racecar-math/static/js/2.9835c002.chunk.js",
+    "static/js/2.9835c002.chunk.js.map": "/racecar-math/static/js/2.9835c002.chunk.js.map",
+    "index.html": "/racecar-math/index.html",
+    "precache-manifest.71966cca415ab4fe0de1710a00745e17.js": "/racecar-math/precache-manifest.71966cca415ab4fe0de1710a00745e17.js",
+    "service-worker.js": "/racecar-math/service-worker.js",
+    "static/css/main.86422b54.chunk.css.map": "/racecar-math/static/css/main.86422b54.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.8ec8d035.js",
+    "static/js/runtime-main.094acf63.js",
     "static/js/2.9835c002.chunk.js",
     "static/css/main.86422b54.chunk.css",
-    "static/js/main.21cb4e1f.chunk.js"
+    "static/js/main.0e3fd84b.chunk.js"
   ]
 }
