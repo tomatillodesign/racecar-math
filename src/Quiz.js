@@ -3,7 +3,6 @@ import QuizBody from "./QuizBody.js";
 import Score from "./Score.js";
 import Settings from "./Settings.js";
 import Summary from "./Summary.js";
-import NameForm from "./NameForm.js";
 import SprintArea from "./SprintArea.js";
 import "./App.css";
 
@@ -66,9 +65,10 @@ class Quiz extends React.Component {
   startOver(event) {
     event.preventDefault();
     this.props.resetColors(event);
+    this.props.resetName(event);
 
     this.setState({
-         isSprint: false,
+      isSprint: false,
       isActive: false,
       isMenuOpened: false,
       typeOfProblem: "addition",
@@ -89,7 +89,6 @@ class Quiz extends React.Component {
     this.setState({ typeOfProblem: event.value,
          startTime: Date.now()
      });
-    //console.log(event);
     console.log("setQuestionType");
   }
 
@@ -152,8 +151,6 @@ class Quiz extends React.Component {
     if (this.state.isActive === true) {
       return (
         <>
-          <NameForm />
-
           <h2 className="quiz-active-message">Complete the Question Below</h2>
           <div className="type-of-question">
             {this.state.difficulty} &middot; {this.state.typeOfProblem}

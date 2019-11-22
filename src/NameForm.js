@@ -1,54 +1,37 @@
 import React from "react";
 import "./App.css";
-import Welcome from "./Welcome";
 
-class NameForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-         value: '',
-         active: true,
-    };
+function NameForm(props) {
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+     const handleNameSubmit = props.handleNameSubmit;
+     const handleNameChange = props.handleNameChange;
 
-  }
+     if( props.nameFormActive === true ) {
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
+       return (
+            <>
+              <form id="name-form" onSubmit={handleNameSubmit} >
+                <label>
+                What's Your Name?
+                  <input type="text" onChange={handleNameChange} />
+                </label>
+                <input type="submit" value="Submit" />
+              </form>
+         </>
+       );
 
-  handleSubmit(event) {
+     } else {
 
-    event.preventDefault();
-    // return (<Welcome userName={this.state.value} />);
-    this.setState({active: false});
+           return (
+                 <>
+                 <div className="clb-welcome-area">
+                 <p>Welcome, {props.name}</p>
+                 </div>
+                   </>
+           );
 
-  }
+     }
 
-  render() {
-       if( this.state.active ) {
-         return (
-              <>
-                <form onSubmit={this.handleSubmit} id="name-form">
-                  <label>
-                  What's Your Name?
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
-                  </label>
-                  <input type="submit" value="Submit" />
-                </form>
-           <Welcome userName={this.state.value} />
-           </>
-         );
-    } else {
-         return (
-              <>
-                <Welcome userName={this.state.value} />
-                </>
-         );
-    }
-  }
 }
 
 export default NameForm;

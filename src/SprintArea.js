@@ -1,14 +1,13 @@
 import React from "react";
 import QuizBody from "./QuizBody.js";
-import NameForm from "./NameForm.js";
 import Score from "./Score.js";
 import SprintSettings from "./SprintSettings.js";
-import Summary from "./Summary.js";
 import SprintSummary from "./SprintSummary.js";
+import SprintEnding from "./SprintEnding.js";
 import Timer from "./Timer.js";
 import "./App.css";
 
-import { faFlagCheckered, faCog } from "@fortawesome/free-solid-svg-icons";
+import { faFlagCheckered } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class SprintArea extends React.Component {
@@ -19,9 +18,9 @@ class SprintArea extends React.Component {
       typeOfProblem: "addition",
       timeStarted: null,
       timeRemaining: null,
-      lengthOfSprint: 3,
+      lengthOfSprint: 60,
       difficulty: "easy",
-      showSummary: true,
+      showSummary: false,
       postSprintSummary: false,
       numberCorrect: null,
       totalNumQuestions: null,
@@ -33,7 +32,9 @@ class SprintArea extends React.Component {
     this.setQuestionDifficulty = this.setQuestionDifficulty.bind(this);
     this.answerSubmit = this.answerSubmit.bind(this);
     this.endSprint = this.endSprint.bind(this);
-
+    this.retrySprint = this.retrySprint.bind(this);
+    this.newSprint = this.newSprint.bind(this);
+    this.setSprintLength = this.setSprintLength.bind(this);
 
   }
 
@@ -58,6 +59,33 @@ class SprintArea extends React.Component {
      console.log("endSprint");
 }
 
+retrySprint(event) {
+     event.preventDefault();
+         this.setState({
+              getStarted: true,
+              timeStarted: Date.now(),
+              startTime: Date.now(),
+              numberCorrect: null,
+             totalNumQuestions: null,
+             answerList: [],
+              timeRemaining: this.state.lengthOfSprint
+         });
+    console.log("RETRY SPRINT");
+}
+
+newSprint(event) {
+     event.preventDefault();
+         this.setState({
+              getStarted: false,
+              numberCorrect: null,
+             totalNumQuestions: null,
+             answerList: [],
+              timeRemaining: null,
+              postSprintSummary: false,
+         });
+    console.log("NEW SPRINT");
+}
+
   setQuestionType(event) {
     this.setState({
          typeOfProblem: event.value
@@ -72,6 +100,12 @@ class SprintArea extends React.Component {
     console.log("setQuestionDifficulty");
   }
 
+  setSprintLength(event) {
+       this.setState({
+           lengthOfSprint: event.value
+       });
+      console.log("setSprintLength");
+ }
 
   answerSubmit(answerObj) {
 
@@ -115,14 +149,6 @@ class SprintArea extends React.Component {
             answerSubmit={this.answerSubmit}
             answerList={this.state.answerList}
           />
-          <Score
-            numberCorrect={this.state.numberCorrect}
-            totalNumQuestions={this.state.totalNumQuestions}
-          />
-          <Summary
-           answerList={this.state.answerList}
-           showSummary={this.state.showSummary}
-          />
         </div>
       );
 } else if (this.state.postSprintSummary === true) {
@@ -136,12 +162,16 @@ class SprintArea extends React.Component {
          <SprintSummary
                answerList={this.state.answerList}
          />
+         <SprintEnding
+               startOver={this.props.startOver}
+               retrySprint={this.retrySprint}
+               newSprint={this.newSprint}
+          />
        </>
      );
     } else {
       return (
         <>
-          <NameForm />
           <div className="settings-container-sprints">
              <SprintSettings
                viewSettings={this.state.viewSettings}
@@ -150,6 +180,7 @@ class SprintArea extends React.Component {
                setQuestionDifficulty={this.setQuestionDifficulty}
                typeOfProblem={this.state.typeOfProblem}
                difficulty={this.state.difficulty}
+               setSprintLength={this.setSprintLength}
                startOver={this.startOver}
                resetColors={this.props.resetColors}
                currentColorScheme={currentColorScheme}

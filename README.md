@@ -8,4 +8,3 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - Add a timed "Sprint" mode
 - Add fun feedback messages (eg "Three in row correct - you're on fire!", or "Try something a bit more challenging")
-- ~~Integrate with WordPress (embed the game on a page, for example, and allow users to save their high scores, etc.)~~

@@ -3,9 +3,6 @@ import "./App.css";
 
 import Select from 'react-select';
 
-import { faCog } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 function SprintSettings(props) {
 
        // Color Scheme -- SELECT
@@ -46,6 +43,18 @@ function SprintSettings(props) {
        if( props.difficulty === 'medium' ) { defaultDifficulty = difficultyOptions[1]; }
        if( props.difficulty === 'hard' ) { defaultDifficulty = difficultyOptions[2]; }
 
+
+       // Length of Sprint -- SELECT
+       const sprintLength = [
+            { value: 60, label: '1 Minute' },
+            { value: 90, label: '90 Seconds' },
+            { value: 120, label: '2 Minutes' }
+       ];
+
+       var defaultSprintLength = sprintLength[0];
+       if( props.difficulty === 90 ) { defaultSprintLength = sprintLength[1]; }
+       if( props.difficulty === 120 ) { defaultSprintLength = sprintLength[2]; }
+
     return (
       <div className="clb-sprint-settings">
         <div className="single-setting-area colors">
@@ -59,6 +68,10 @@ function SprintSettings(props) {
         <div className="single-setting-area difficulty">
           <h3>Difficulty</h3>
           <Select options={difficultyOptions} defaultValue={defaultDifficulty} onChange={props.setQuestionDifficulty} id="difficulty-select" />
+        </div>
+        <div className="single-setting-area sprint-length">
+          <h3>Amount of Time</h3>
+          <Select options={sprintLength} defaultValue={defaultSprintLength} onChange={props.setSprintLength} id="sprint-length" />
         </div>
         <div className="single-setting-area start-over">
           <button
