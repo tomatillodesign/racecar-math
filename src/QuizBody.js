@@ -3,13 +3,19 @@ import QuizProblem from "./QuizProblem";
 import "./App.css";
 
 function QuizBody(props) {
+     const isSprint = props.isSprint;
   const typeOfProblem = props.typeOfProblem;
   const difficulty = props.difficulty;
   const answerSubmit = props.answerSubmit;
   const answerList = props.answerList;
   const startTime = props.startTime;
+  const streak = props.streak;
+
+     const prevAnswer = answerList[answerList.length - 1];
+     console.log(prevAnswer);
 
   console.log("startime: " + startTime);
+
 
   let problem = null;
   let num1 = null;
@@ -80,7 +86,21 @@ else if (typeOfProblem === "multiplication") {
 
 }
 // division
-else if (typeOfProblem === "division") {
+else if ( typeOfProblem === "division" && difficulty === 'easy' ) {
+
+     // loop to ensure an integer answer
+     do {
+
+          num1 = randomIntFromInterval(0, 24);
+          num2 = randomIntFromInterval(1, 8);
+
+          answer = num1 / num2;
+          problem = num1 + " ÷ " + num2 + " = ?";
+          completedProblem = num1 + " ÷ " + num2 + " = " + answer;
+
+     } while ( ((answer - Math.floor(answer)) !== 0) );
+
+} else if (typeOfProblem === "division") {
 
      // loop to ensure an integer answer
      do {
@@ -88,9 +108,6 @@ else if (typeOfProblem === "division") {
           if(difficulty === "medium") {
                num1 = randomIntFromInterval(5, 150);
                num2 = randomIntFromInterval(2, 15);
-          } else if (difficulty === "easy") {
-               num1 = randomIntFromInterval(0, 24);
-               num2 = randomIntFromInterval(1, 8);
           } else if (difficulty === "hard") {
                num1 = randomIntFromInterval(10, 500);
                num2 = randomIntFromInterval(5, 250);
@@ -117,6 +134,7 @@ else if (typeOfProblem === "division") {
         answer={answer}
         problem={problem}
         completedProblem={completedProblem}
+        streak={streak}
       />
     </main>
   );

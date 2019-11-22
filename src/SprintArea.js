@@ -143,6 +143,7 @@ newSprint(event) {
             {this.state.difficulty} &middot; {this.state.typeOfProblem}
           </div>
           <QuizBody
+               isSprint={true}
             typeOfProblem={this.state.typeOfProblem}
             difficulty={this.state.difficulty}
             startTime={this.state.startTime}
@@ -181,7 +182,6 @@ newSprint(event) {
                typeOfProblem={this.state.typeOfProblem}
                difficulty={this.state.difficulty}
                setSprintLength={this.setSprintLength}
-               startOver={this.startOver}
                resetColors={this.props.resetColors}
                currentColorScheme={currentColorScheme}
                changeColors={this.props.changeColors}

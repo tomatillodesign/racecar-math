@@ -10,12 +10,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function RacecarHeader() {
   return (
     <header className="App-header">
-      <h1>
+      <a href="/"><h1>
         Racecar Math
         <span className="header-icons">
           <FontAwesomeIcon icon={faCarSide} />
         </span>
-      </h1>
+      </h1></a>
     </header>
   );
 }

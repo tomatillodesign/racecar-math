@@ -7,5 +7,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Roadmap & TODOs
 
 - ~~Add a timed "Sprint" mode~~ (Completed 11/22)
-- Add fun feedback messages (eg "Three in row correct - you're on fire!", or "Try something a bit more challenging")
+- ~~Add fun feedback messages (eg "Three in row correct - you're on fire!", or "Try something a bit more challenging")~~ (Completed 11/22)
 - Prevent duplicates in Sprint mode
+- Clean up and organize components/codebase

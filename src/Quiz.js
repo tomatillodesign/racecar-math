@@ -1,5 +1,6 @@
 import React from "react";
 import QuizBody from "./QuizBody.js";
+import QuizAlert from "./QuizAlert.js";
 import Score from "./Score.js";
 import Settings from "./Settings.js";
 import Summary from "./Summary.js";
@@ -25,6 +26,7 @@ class Quiz extends React.Component {
       showSummary: false,
       numberCorrect: null,
       totalNumQuestions: null,
+      streak: 0,
       answerList: []
     };
 
@@ -79,6 +81,7 @@ class Quiz extends React.Component {
       showSummary: false,
       numberCorrect: null,
       totalNumQuestions: null,
+      streak: 0,
       answerList: []
     });
 
@@ -130,10 +133,21 @@ class Quiz extends React.Component {
 
     if (answerObj.isCorrect === true) {
       this.setState(prevState => {
-        return { numberCorrect: prevState.numberCorrect + 1 };
-      });
-    }
-  }
+        return {
+             numberCorrect: prevState.numberCorrect + 1,
+             streak: prevState.streak + 1,
+             };
+           });
+     } else {
+
+          this.setState(prevState => {
+            return {
+                 streak: 0,
+            };
+          });
+
+     }
+       }
 
 
   offCanvasClick() {
@@ -151,6 +165,12 @@ class Quiz extends React.Component {
     if (this.state.isActive === true) {
       return (
         <>
+             <QuizAlert
+                  streak={this.state.streak}
+                  answerList={this.state.answerList}
+                  numberCorrect={this.state.numberCorrect}
+                  totalNumQuestions={this.state.totalNumQuestions}
+             />
           <h2 className="quiz-active-message">Complete the Question Below</h2>
           <div className="type-of-question">
             {this.state.difficulty} &middot; {this.state.typeOfProblem}
@@ -193,6 +213,7 @@ class Quiz extends React.Component {
           <QuizBody
             typeOfProblem={this.state.typeOfProblem}
             difficulty={this.state.difficulty}
+            streak={this.state.streak}
             startTime={this.state.startTime}
             answerSubmit={this.answerSubmit}
             answerList={this.state.answerList}

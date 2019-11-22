@@ -28,6 +28,7 @@ class QuizProblem extends React.Component {
     // alert("QuizProblem handleSubmit: " + this.state.value);
 
     const typeOfProblem = this.props.typeOfProblem;
+    const streak = this.props.streak;
     const difficulty = this.props.difficulty;
     const num1 = this.props.num1;
     const num2 = this.props.num2;
@@ -60,7 +61,8 @@ class QuizProblem extends React.Component {
       answerSubmit,
       elapsed,
       formattedElapsed,
-      isCorrect
+      isCorrect,
+      streak
     };
 
     //alert("QuizProblem handleSubmit: " + this.state.value);
