@@ -6,8 +6,6 @@ Fun math practice, built in React
 
 This project was created by Chris Liu-Beers of [Tomatillo Design](http://www.tomatillodesign.com) as a fun way to practice building in React. My goal is to create an interesting math game for elementary-age students and get better at coding at the same time.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Features
 
 - Timed "Sprint" and free practice modes
@@ -18,10 +16,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Detailed feedback for students, including corrected answers and time spent on each problem
 - Sprint mode includes a check to ensure that no problem is repeated
 
-## Technical
+## Technical Credits
 
-- I utilized [FontAwesome Icons](https://fontawesome.com/how-to-use/on-the-web/using-with/react), [OffCanvas](https://www.npmjs.com/package/offcanvas), and [ReactSelect](https://react-select.com/home) libraries
-- Deployed using [GitHub Pages](https://github.com/gitname/react-gh-pages)
+- [Create React App](https://github.com/facebook/create-react-app)
+- [FontAwesome Icons](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
+- [OffCanvas](https://www.npmjs.com/package/offcanvas)
+- [ReactSelect](https://react-select.com/home) libraries
+- [GitHub Pages](https://github.com/gitname/react-gh-pages)
 
 ## To Do's
 
