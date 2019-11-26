@@ -393,7 +393,18 @@ h3.sprint-complete-message {
      font-size: 14px;
 }
 
+.what-next {
+     margin-top: 12px;
+}
 
+.timer-area h2 {
+     font-weight: 300;
+}
+
+.timer-area .red {
+     font-weight: 700;
+     color: red;
+}
 
 /* ------ COLORS: BLUE ---------------- */
 .blue .single-answer .question-number {

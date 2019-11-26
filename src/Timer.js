@@ -36,10 +36,15 @@ class Timer extends React.Component {
 
      render() {
 
+          let color = 'regular';
+          if( this.state.timeRemaining < 10 ) {
+               color = 'red';
+          }
+
             return (
 
                  <div className="timer-area">
-                    <h2>Time Remaining: {this.state.timeRemaining}</h2>
+                    <h2><span class="time-remaining-text">Time Remaining: </span><span class={"tick-number " + color}>{this.state.timeRemaining}</span></h2>
                  </div>
 
             );

@@ -21,7 +21,7 @@ This project was created by Chris Liu-Beers of [Tomatillo Design](http://www.tom
 - [Create React App](https://github.com/facebook/create-react-app)
 - [FontAwesome Icons](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
 - [OffCanvas](https://www.npmjs.com/package/offcanvas)
-- [ReactSelect](https://react-select.com/home) libraries
+- [ReactSelect](https://react-select.com/home)
 - [GitHub Pages](https://github.com/gitname/react-gh-pages)
 
 ## To Do's
