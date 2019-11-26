@@ -59,6 +59,11 @@ class App extends React.Component {
    });
  }
 
+
+ removeNameEntry() {
+      console.log("REMOVE NAME ENTRY");
+}
+
   render() {
     let appClasses = "App racecar-math " + this.state.colorScheme.value;
 
@@ -78,6 +83,7 @@ class App extends React.Component {
                currentColorScheme={this.state.colorScheme.value}
                resetColors={this.resetColors}
                resetName={this.resetName}
+               removeNameEntry={this.removeNameEntry}
           />
         <RacecarFooter />
       </div>

@@ -3,13 +3,13 @@ import QuizProblem from "./QuizProblem";
 import "./App.css";
 
 function QuizBody(props) {
-     const isSprint = props.isSprint;
-  const typeOfProblem = props.typeOfProblem;
-  const difficulty = props.difficulty;
-  const answerSubmit = props.answerSubmit;
-  const answerList = props.answerList;
-  const startTime = props.startTime;
-  const streak = props.streak;
+     //const isSprint = props.isSprint;
+     const typeOfProblem = props.typeOfProblem;
+     const difficulty = props.difficulty;
+     const answerSubmit = props.answerSubmit;
+     const answerList = props.answerList;
+     const startTime = props.startTime;
+     const streak = props.streak;
 
      const prevAnswer = answerList[answerList.length - 1];
      console.log(prevAnswer);
@@ -128,7 +128,7 @@ else if ( typeOfProblem === "division" && difficulty === 'easy' ) {
         typeOfProblem={typeOfProblem}
         difficulty={difficulty}
         startTime={startTime}
-        answerSubmit={answerSubmit}
+        answerSubmit={answerSubmit} 
         num1={num1}
         num2={num2}
         answer={answer}

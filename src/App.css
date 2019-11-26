@@ -406,6 +406,10 @@ h3.sprint-complete-message {
      transition: all ease-in-out 2.0s;
 }
 
+.blue .settings-container-sprints {
+     background: #09d3ac;
+}
+
 
 /* ------ COLORS: PINK ---------------- */
 .App.pink .App-header {
@@ -434,7 +438,7 @@ h3.sprint-complete-message {
      transition: all ease-in-out .25s;
 }
 
-.App.pink .clb-settings.revealed,  .pink .clb-quiz-alert {
+.App.pink .clb-settings.revealed,  .pink .clb-quiz-alert, .pink .settings-container-sprints {
   background: #f5bddc;
   transition: all ease-in-out 2.0s;
 }
@@ -499,7 +503,7 @@ h3.sprint-complete-message {
      transition: all ease-in-out 2.0s;
 }
 
-.App.orange .clb-settings.revealed, .orange .clb-quiz-alert {
+.App.orange .clb-settings.revealed, .orange .clb-quiz-alert, .orange .settings-container-sprints {
   background: #fcddb5;
   transition: all ease-in-out 2.0s;
 }
@@ -557,7 +561,7 @@ h3.sprint-complete-message {
      background: #76B3FA;
 }
 
-.App.green .clb-settings.revealed, .green .clb-quiz-alert {
+.App.green .clb-settings.revealed, .green .clb-quiz-alert, .green .settings-container-sprints {
   background: #c7ebd2;
   transition: all ease-in-out 2.0s;
 }

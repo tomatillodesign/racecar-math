@@ -20,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Technical
 
-- I utilized [FontAwesome, native React version](https://fontawesome.com/how-to-use/on-the-web/using-with/react), [OffCanvas](https://www.npmjs.com/package/offcanvas), and [ReactSelect](https://react-select.com/home) libraries
+- I utilized [FontAwesome Icons](https://fontawesome.com/how-to-use/on-the-web/using-with/react), [OffCanvas](https://www.npmjs.com/package/offcanvas), and [ReactSelect](https://react-select.com/home) libraries
 - Deployed using [GitHub Pages](https://github.com/gitname/react-gh-pages)
 
 ## To Do's

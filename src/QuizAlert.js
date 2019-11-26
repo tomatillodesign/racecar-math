@@ -1,11 +1,6 @@
 import React from "react";
 import "./App.css";
 
-// get our fontawesome imports
-import {
-  faCarSide,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function QuizAlert(props) {
 
@@ -13,15 +8,15 @@ function QuizAlert(props) {
 
      // Correct Streaks
      if( props.streak === 3 ) {
-          message = <div className="clb-quiz-alert"><div className="success three">3 in a row! 😄</div></div>
+          message = <div className="clb-quiz-alert"><div className="success three">3 in a row! <span role="img" aria-label="emoji">😄</span></div></div>
      } else if ( props.streak === 4 ) {
-          message = <div className="clb-quiz-alert"><div className="success four">4 in a row! 🤩</div></div>
+          message = <div className="clb-quiz-alert"><div className="success four">4 in a row! <span role="img" aria-label="emoji">🤩</span></div></div>
      } else if ( props.streak === 5 ) {
-          message = <div className="clb-quiz-alert"><div className="success five">5 in a row! You're on fire! 🔥🔥🔥🔥🔥</div></div>
+          message = <div className="clb-quiz-alert"><div className="success five">5 in a row! You're on fire! <span role="img" aria-label="emoji">🔥🔥🔥🔥🔥</span></div></div>
      } else if ( props.streak === 10 ) {
-          message = <div className="clb-quiz-alert"><div className="success ten">That's 10 in a row! 🥳🎉👏<div className="what-next">Are you ready for a bigger challenge?<br/>Use the settings to choose another type of problem or difficulty.</div></div></div>
+          message = <div className="clb-quiz-alert"><div className="success ten">That's 10 in a row! <span role="img" aria-label="emoji">🥳🎉👏</span><div className="what-next">Are you ready for a bigger challenge?<br/>Use the settings to choose another type of problem or difficulty.</div></div></div>
      } else if ( props.streak === 20 ) {
-          message = <div className="clb-quiz-alert"><div className="success twenty">Too easy! That's 20 in a row! 🥳🥳🎉🎉👏👏<div className="what-next">Are you ready for a bigger challenge?<br/>Use the settings to choose another type of problem or difficulty.</div></div></div>
+          message = <div className="clb-quiz-alert"><div className="success twenty">Too easy! That's 20 in a row! <span role="img" aria-label="emoji">🥳🥳🎉🎉👏👏</span><div className="what-next">Are you ready for a bigger challenge?<br/>Use the settings to choose another type of problem or difficulty.</div></div></div>
      }
 
      // Too Hard

@@ -40,6 +40,8 @@ class Quiz extends React.Component {
     this.offCanvasClick = this.offCanvasClick.bind(this);
     this.startSprint = this.startSprint.bind(this);
 
+    const removeNameEntry = props.removeNameEntry;
+
   }
 
 
@@ -50,6 +52,7 @@ class Quiz extends React.Component {
            isSprint: true,
            startTime: Date.now(),
       });
+      //this.removeNameEntry;
       console.log("startSprint");
  }
 
@@ -60,8 +63,10 @@ class Quiz extends React.Component {
          isActive: true,
          startTime: Date.now(),
     });
+    //removeNameEntry();
     console.log("startQuiz");
   }
+
 
 
   startOver(event) {
