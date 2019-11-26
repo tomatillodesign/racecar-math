@@ -3,6 +3,7 @@ import "./App.css";
 
 function NameForm(props) {
 
+     const name = props.name;
      const handleNameSubmit = props.handleNameSubmit;
      const handleNameChange = props.handleNameChange;
 
@@ -20,7 +21,7 @@ function NameForm(props) {
          </>
        );
 
-     } else {
+ } else if( (props.nameFormActive === false) && (name !== null) ) {
 
            return (
                  <>
@@ -29,6 +30,10 @@ function NameForm(props) {
                  </div>
                    </>
            );
+
+     } else {
+
+          return <></>;
 
      }
 

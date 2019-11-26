@@ -128,7 +128,7 @@ else if ( typeOfProblem === "division" && difficulty === 'easy' ) {
         typeOfProblem={typeOfProblem}
         difficulty={difficulty}
         startTime={startTime}
-        answerSubmit={answerSubmit} 
+        answerSubmit={answerSubmit}
         num1={num1}
         num2={num2}
         answer={answer}

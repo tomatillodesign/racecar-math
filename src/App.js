@@ -19,6 +19,7 @@ class App extends React.Component {
     this.resetName = this.resetName.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleNameSubmit = this.handleNameSubmit.bind(this);
+    this.removeNameEntry = this.removeNameEntry.bind(this)
 
   }
 
@@ -62,6 +63,9 @@ class App extends React.Component {
 
  removeNameEntry() {
       console.log("REMOVE NAME ENTRY");
+      this.setState({
+           nameFormActive: false
+      });
 }
 
   render() {
