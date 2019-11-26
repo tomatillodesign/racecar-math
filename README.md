@@ -1,4 +1,4 @@
-# Racecar Math 🚙🏁
+# 🚙 Racecar Math 🏁
 
 Fun math practice, built in React
 
