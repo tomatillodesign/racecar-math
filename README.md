@@ -15,6 +15,7 @@ This project was created by Chris Liu-Beers of [Tomatillo Design](http://www.tom
 - Students receive feedback in the form of custom messages (including emojis) as they practice
 - Detailed feedback for students, including corrected answers and time spent on each problem
 - Sprint mode includes a check to ensure that no problem is repeated
+- Custom math logic prevents division by zero, negative numbers, etc.
 
 ## Technical Credits
 
@@ -26,5 +27,4 @@ This project was created by Chris Liu-Beers of [Tomatillo Design](http://www.tom
 
 ## To Do's
 
-- Prevent duplicates in Sprint mode
 - Clean up and organize components/codebase

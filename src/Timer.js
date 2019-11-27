@@ -43,8 +43,8 @@ class Timer extends React.Component {
 
             return (
 
-                 <div className="timer-area">
-                    <h2><span class="time-remaining-text">Time Remaining: </span><span class={"tick-number " + color}>{this.state.timeRemaining}</span></h2>
+                 <div className={"timer-area " + color}>
+                    <h2><span className="time-remaining-text">Time Remaining: </span><span className={"tick-number " + color}>{this.state.timeRemaining}</span></h2>
                  </div>
 
             );
