@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/racecar-math/static/css/main.be1591a4.chunk.css",
-    "main.js": "/racecar-math/static/js/main.9a317704.chunk.js",
-    "main.js.map": "/racecar-math/static/js/main.9a317704.chunk.js.map",
-    "runtime-main.js": "/racecar-math/static/js/runtime-main.094acf63.js",
-    "runtime-main.js.map": "/racecar-math/static/js/runtime-main.094acf63.js.map",
-    "static/js/2.9835c002.chunk.js": "/racecar-math/static/js/2.9835c002.chunk.js",
-    "static/js/2.9835c002.chunk.js.map": "/racecar-math/static/js/2.9835c002.chunk.js.map",
+    "main.css": "/racecar-math/static/css/main.8718983e.chunk.css",
+    "main.js": "/racecar-math/static/js/main.ddb1d55e.chunk.js",
+    "main.js.map": "/racecar-math/static/js/main.ddb1d55e.chunk.js.map",
+    "runtime-main.js": "/racecar-math/static/js/runtime-main.ebc1bfe3.js",
+    "runtime-main.js.map": "/racecar-math/static/js/runtime-main.ebc1bfe3.js.map",
+    "static/js/2.45a719ae.chunk.js": "/racecar-math/static/js/2.45a719ae.chunk.js",
+    "static/js/2.45a719ae.chunk.js.map": "/racecar-math/static/js/2.45a719ae.chunk.js.map",
     "index.html": "/racecar-math/index.html",
-    "precache-manifest.df97893431df105483b20d246e979e8c.js": "/racecar-math/precache-manifest.df97893431df105483b20d246e979e8c.js",
+    "precache-manifest.d43739edb74816169fda326efa191c35.js": "/racecar-math/precache-manifest.d43739edb74816169fda326efa191c35.js",
     "service-worker.js": "/racecar-math/service-worker.js",
-    "static/css/main.be1591a4.chunk.css.map": "/racecar-math/static/css/main.be1591a4.chunk.css.map"
+    "static/css/main.8718983e.chunk.css.map": "/racecar-math/static/css/main.8718983e.chunk.css.map",
+    "static/js/2.45a719ae.chunk.js.LICENSE": "/racecar-math/static/js/2.45a719ae.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.094acf63.js",
-    "static/js/2.9835c002.chunk.js",
-    "static/css/main.be1591a4.chunk.css",
-    "static/js/main.9a317704.chunk.js"
+    "static/js/runtime-main.ebc1bfe3.js",
+    "static/js/2.45a719ae.chunk.js",
+    "static/css/main.8718983e.chunk.css",
+    "static/js/main.ddb1d55e.chunk.js"
   ]
 }
