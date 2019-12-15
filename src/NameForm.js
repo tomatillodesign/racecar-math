@@ -13,7 +13,7 @@ function NameForm(props) {
             <>
               <form id="name-form" onSubmit={handleNameSubmit} >
                 <label>
-                What's Your Name?
+                What's your name?
                   <input type="text" onChange={handleNameChange} />
                 </label>
                 <input type="submit" value="Submit" />

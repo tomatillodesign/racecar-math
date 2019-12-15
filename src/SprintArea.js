@@ -47,7 +47,7 @@ class SprintArea extends React.Component {
                 startTime: Date.now(),
                 timeRemaining: this.state.lengthOfSprint
            });
-      console.log("getStarted - " + this.state.timeRemaining);
+      
  }
 
  endSprint(event) {
@@ -129,11 +129,9 @@ newSprint(event) {
 
   render() {
 
-       console.log(this.props.currentColorScheme);
        const currentColorScheme = this.props.currentColorScheme;
 
     if (this.state.getStarted === true) {
-         console.log("getStarted - " + this.state.timeRemaining);
 
       return (
         <div className="clb-sprint-active">
@@ -167,6 +165,7 @@ newSprint(event) {
                startOver={this.props.startOver}
                retrySprint={this.retrySprint}
                newSprint={this.newSprint}
+               startQuiz={this.props.startQuiz}
           />
        </>
      );

@@ -46,7 +46,7 @@ class App extends React.Component {
 
  handleNameChange(event) {
      event.preventDefault();
-     console.log(event.target.value);
+     // console.log(event.target.value);
      this.setState({
           name: event.target.value
      });
@@ -62,7 +62,6 @@ class App extends React.Component {
 
 
  removeNameEntry() {
-      console.log("REMOVE NAME ENTRY");
       this.setState({
            nameFormActive: false
       });

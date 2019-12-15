@@ -20,7 +20,6 @@ class Timer extends React.Component {
                   timeRemaining: prevState.timeRemaining - 1
                 }))
               } else {
-                   console.log('TIMES UP');
                    this.props.endSprint();
                 clearInterval(this.interval);
               }

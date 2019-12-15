@@ -11,8 +11,6 @@ function QuizBody(props) {
      const startTime = props.startTime;
      const streak = props.streak;
 
-     console.log(answerList);
-
      let prevAnswerArray = [];
      for (let i = 0; i < answerList.length; i++) {
           let currentAnswer = answerList[i];
@@ -21,9 +19,6 @@ function QuizBody(props) {
           let prevAnswer = [prevNum1, prevNum2];
           prevAnswerArray.push(prevAnswer);
      }
-
-     console.log(prevAnswerArray);
-     console.log("startime: " + startTime);
 
   let problem = null;
   let num1 = null;
@@ -69,8 +64,8 @@ if (typeOfProblem === "addition") {
                num1 = randomIntFromInterval(0, 12);
                num2 = randomIntFromInterval(0, 12);
           } else if (difficulty === "hard") {
-               num1 = randomIntFromInterval(50, 1000);
-               num2 = randomIntFromInterval(50, 1000);
+               num1 = randomIntFromInterval(25, 250);
+               num2 = randomIntFromInterval(25, 250);
           }
           answer = num1 + num2;
           problem = num1 + " + " + num2 + " = ?";
@@ -83,7 +78,7 @@ if (typeOfProblem === "addition") {
 
                for (let i = 0; i < prevAnswerArray.length; i++) {
                     let match = arraysMatch(prevAnswerArray[i], testCurrentProblem);
-                    console.log(match);
+                    // console.log(match);
                          if( match === true ) {
                               console.log("Matched: " + prevAnswerArray[i] + " --- " + testCurrentProblem);
                               doOver = true;
@@ -112,8 +107,8 @@ else if (typeOfProblem === "subtraction") {
                num1 = randomIntFromInterval(0, 10);
                num2 = randomIntFromInterval(0, 10);
           } else if (difficulty === "hard") {
-               num1 = randomIntFromInterval(50, 999);
-               num2 = randomIntFromInterval(50, 999);
+               num1 = randomIntFromInterval(25, 250);
+               num2 = randomIntFromInterval(25, 250);
           }
           answer = num1 - num2;
           problem = num1 + " - " + num2 + " = ?";
@@ -148,14 +143,14 @@ else if (typeOfProblem === "multiplication") {
           doOver = false;
 
           if(difficulty === "medium") {
-               num1 = randomIntFromInterval(5, 15);
-               num2 = randomIntFromInterval(5, 15);
+               num1 = randomIntFromInterval(3, 12);
+               num2 = randomIntFromInterval(3, 12);
           } else if (difficulty === "easy") {
                num1 = randomIntFromInterval(0, 8);
                num2 = randomIntFromInterval(0, 8);
           } else if (difficulty === "hard") {
-               num1 = randomIntFromInterval(5, 30);
-               num2 = randomIntFromInterval(5, 30);
+               num1 = randomIntFromInterval(4, 24);
+               num2 = randomIntFromInterval(4, 24);
           }
           answer = num1 * num2;
           problem = num1 + " × " + num2 + " = ?";
@@ -225,11 +220,11 @@ else if ( typeOfProblem === "division" && difficulty === 'easy' ) {
           doOver = false;
 
           if(difficulty === "medium") {
-               num1 = randomIntFromInterval(5, 150);
+               num1 = randomIntFromInterval(3, 120);
                num2 = randomIntFromInterval(2, 15);
           } else if (difficulty === "hard") {
-               num1 = randomIntFromInterval(10, 500);
-               num2 = randomIntFromInterval(5, 250);
+               num1 = randomIntFromInterval(12, 300);
+               num2 = randomIntFromInterval(5, 150);
           }
           answer = num1 / num2;
           problem = num1 + " ÷ " + num2 + " = ?";
@@ -258,7 +253,7 @@ else if ( typeOfProblem === "division" && difficulty === 'easy' ) {
 
 
 
-  console.log("answerList: " + JSON.stringify(answerList));
+  // /console.log("answerList: " + JSON.stringify(answerList));
 
   return (
     <main className="clb-quiz-body-area">

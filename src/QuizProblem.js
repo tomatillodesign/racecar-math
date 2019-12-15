@@ -65,26 +65,23 @@ class QuizProblem extends React.Component {
       streak
     };
 
-    //alert("QuizProblem handleSubmit: " + this.state.value);
-    //this.props.answerSubmit(this.state.value);
     this.props.answerSubmit(answer);
     this.setState({ value: "" });
 
-    let end = Date.now();
-    console.log('End Time: ' + end);
+    //let end = Date.now();
 
     event.preventDefault();
   }
 
   componentDidUpdate(){
-       console.log('componentDidUpdate');
+       //console.log('componentDidUpdate');
        this.refs.quizInput.focus();
      }
 
-componentDidMount() {
-     let start = Date.now();
-     console.log('Mounted / Start Time: ' + start);
-}
+// componentDidMount() {
+//      let start = Date.now();
+//      console.log('Mounted / Start Time: ' + start);
+// }
 
   render() {
 

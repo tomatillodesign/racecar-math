@@ -51,7 +51,7 @@ class Quiz extends React.Component {
            startTime: Date.now(),
       });
       this.props.removeNameEntry();
-      console.log("startSprint");
+      //console.log("startSprint");
  }
 
   startQuiz(event) {
@@ -62,7 +62,6 @@ class Quiz extends React.Component {
          startTime: Date.now(),
     });
     this.props.removeNameEntry();
-    console.log("startQuiz");
   }
 
 
@@ -162,7 +161,6 @@ class Quiz extends React.Component {
 
   render() {
 
-       console.log(this.props.currentColorScheme);
        const currentColorScheme = this.props.currentColorScheme;
 
     if (this.state.isActive === true) {
@@ -187,7 +185,7 @@ class Quiz extends React.Component {
 
           <OffCanvas
              width={400}
-             transitionDuration={1000}
+             transitionDuration={800}
              effect={"overlay"}
              isMenuOpened={this.state.isMenuOpened}
              position={"right"}
@@ -244,6 +242,7 @@ class Quiz extends React.Component {
                numberCorrect={this.state.numberCorrect}
                totalNumQuestions={this.state.totalNumQuestions}
                startTime={this.state.startTime}
+               startQuiz={this.startQuiz}
           />
          </div>
        </>

@@ -22,6 +22,13 @@ function SprintEnding(props) {
                     Do a Different Sprint
                </button>
 
+               <button
+                   id="switch-to-practice"
+                   onClick={props.startQuiz}
+                   >
+                   Do Some Practice Laps
+              </button>
+
                 <button
                   onClick={e =>
                     window.confirm(

@@ -10,7 +10,7 @@
 
 .App-header {
      transition: all ease-in-out 2.0s;
-  background-color: #021b79;
+  background-color: #01114b;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -43,6 +43,8 @@
   color: white;
 }
 
+
+
 .header-icons {
   margin-left: 8px;
 }
@@ -70,9 +72,26 @@
      min-width: 140px;
 }
 
+.clb-footer p.inspired {
+     padding-top: 12px;
+     font-size: 24px;
+     font-weight: 300;
+     margin-bottom: 12px;
+}
+
 .version {
-     margin-top: 40px;
-     font-size: 12px;
+     margin-top: 0px;
+     padding-bottom: 20px;
+     font-size: 14px;
+}
+
+.clb-footer a {
+     color: #fff;
+     text-decoration: none;
+}
+
+.clb-footer a:hover {
+     text-decoration: underline;
 }
 
 .clb-quiz-body-area {
@@ -585,8 +604,60 @@ h3.sprint-complete-message {
      color: #3CA55C;
 }
 
+#name-form input[type=submit] {
+     padding: 8px 14px;
+}
+
+.sprint-ending-area button {
+     margin-bottom: 8px;
+}
+
+/* Animate the Racecar
+---------------------------------------------------------------------------------------------------- */
+
+.header-icons {
+     font-size: 48px;
+     color: #09d3ac;
+       position: absolute;
+       animation-duration: 8s;
+       animation-timing-function: ease-in-out;
+       animation-name: slidein;
+       animation-fill-mode: forwards;
+}
+
+@keyframes slidein {
+  from {
+    /* margin-right: 100%;
+    width: 300%; */
+    left: 0;
+  }
+
+  to {
+    /* margin-right: 0;
+    width: 100%; */
+    left: 100%
+  }
+}
 
 
+.App-header h1 {
+     animation-duration: 8s;
+     animation-timing-function: ease-in-out;
+     animation-name: revealLetters;
+     animation-fill-mode: forwards;
+}
+
+@keyframes revealLetters {
+  from {
+    color: #01114b;
+    font-size: 2px;
+  }
+
+  to {
+    color: #fff;
+    font-size: 48px;
+  }
+}
 
 
 /* Media Queries
