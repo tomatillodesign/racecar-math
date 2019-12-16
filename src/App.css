@@ -619,29 +619,28 @@ h3.sprint-complete-message {
      font-size: 48px;
      color: #09d3ac;
        position: absolute;
-       animation-duration: 8s;
-       animation-timing-function: ease-in-out;
+       animation-duration: 6s;
+       animation-timing-function: ease-in;
        animation-name: slidein;
        animation-fill-mode: forwards;
 }
 
 @keyframes slidein {
   from {
-    /* margin-right: 100%;
-    width: 300%; */
     left: 0;
   }
 
   to {
     /* margin-right: 0;
     width: 100%; */
-    left: 100%
+    left: 100%;
   }
+
 }
 
 
 .App-header h1 {
-     animation-duration: 8s;
+     animation-duration: 7s;
      animation-timing-function: ease-in-out;
      animation-name: revealLetters;
      animation-fill-mode: forwards;
